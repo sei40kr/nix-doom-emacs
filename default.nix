@@ -74,6 +74,12 @@
        };
   */
 , dependencyOverrides ? { }
+  /* Doom Emacs packages from generated.nix
+
+     These packages will be merged with emacsPackages before applying
+     emacsPackagesOverlay. The overlay has the highest priority.
+  */
+, doomemacsPackages
 , lib, pkgs, stdenv, buildEnv, makeWrapper
 , runCommand, fetchFromGitHub, writeShellScript
 , writeShellScriptBin, writeTextDir }:
@@ -129,11 +135,14 @@ let
   # Stage 2: install dependencies and byte-compile prepared source
   doomLocal = let
     straight-env = pkgs.callPackage (lock "nix-straight") {
-      emacsPackages = if bundledPackages then
-        let epkgs = emacs-overlay.emacsPackagesFor emacsPackages.emacs;
-        in epkgs.overrideScope' overrides
-      else
-        emacsPackages.overrideScope' overrides;
+      emacsPackages = let
+        basePackages = if bundledPackages
+          then emacs-overlay.emacsPackagesFor emacsPackages.emacs
+          else emacsPackages;
+        # First, merge doomemacsPackages
+        withDoomPackages = basePackages.overrideScope' (final: prev: doomemacsPackages);
+        # Then apply overrides (highest priority)
+      in withDoomPackages.overrideScope' overrides;
       emacs = emacsPackages.emacsWithPackages extraPackages;
       emacsLoadFiles = [ ./advice.el ];
       emacsArgs = [ "--" "install" "--no-hooks" "--no-fonts" "--no-env" ];
