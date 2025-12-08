@@ -1,35 +1,36 @@
-/* Usage example in flake.nix:
+/*
+  Usage example in flake.nix:
 
-   {
-     inputs = {
-       home-manager.url = "github:nix-community/home-manager";
-       nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
-     };
+  {
+    inputs = {
+      home-manager.url = "github:nix-community/home-manager";
+      nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+    };
 
-     outputs = {
-       self,
-       nixpkgs,
-       home-manager,
-       nix-doom-emacs,
-       ...
-     }: {
-       nixosConfigurations.exampleHost = nixpkgs.lib.nixosSystem {
-         system = "x86_64-linux";
-         modules = [
-           home-manager.nixosModules.home-manager
-           {
-             home-manager.users.exampleUser = { pkgs, ... }: {
-               imports = [ nix-doom-emacs.hmModule ];
-               home.doom-emacs = {
-                 enable = true;
-                 doomPrivateDir = ./path/to/doom.d;
-               };
-             };
-           }
-         ];
-       };
-     };
-   }
+    outputs = {
+      self,
+      nixpkgs,
+      home-manager,
+      nix-doom-emacs,
+      ...
+    }: {
+      nixosConfigurations.exampleHost = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.users.exampleUser = { pkgs, ... }: {
+              imports = [ nix-doom-emacs.hmModule ];
+              home.doom-emacs = {
+                enable = true;
+                doomPrivateDir = ./path/to/doom.d;
+              };
+            };
+          }
+        ];
+      };
+    };
+  }
 */
 
 {
@@ -88,11 +89,22 @@
     flake-compat.flake = false;
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }@inputs:
-    let inherit (flake-utils.lib) eachDefaultSystem mkApp;
-    in eachDefaultSystem (system:
-      let pkgs = import nixpkgs { inherit system; };
-      in {
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      ...
+    }@inputs:
+    let
+      inherit (flake-utils.lib) eachDefaultSystem mkApp;
+    in
+    eachDefaultSystem (
+      system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+      {
         apps = {
           default = self.outputs.apps.${system}.doom-emacs-example;
           doom-emacs-example = mkApp {
@@ -102,27 +114,42 @@
         };
 
         devShells.default = pkgs.mkShell {
-          buildInputs =
-            [ (pkgs.python3.withPackages (ps: with ps; [ PyGithub ])) ];
+          buildInputs = [ (pkgs.python3.withPackages (ps: with ps; [ PyGithub ])) ];
         };
 
-        package = { ... }@args:
+        package =
+          { ... }@args:
           pkgs.lib.warn ''
             nix-doom-emacs no longer supports the deprecated `package` flake output.
             It will be removed after the release of NixOS 23.05.
 
             Please use `packages.${system}.default.override { ... }` instead!
-          ''
-          (pkgs.callPackage self args);
+          '' (pkgs.callPackage self args);
 
-        packages = {
-          default = self.outputs.packages.${system}.doom-emacs-example;
-          doom-emacs-example = pkgs.callPackage self {
-            doomPrivateDir = ./test/doom.d;
+        packages =
+          let
+            # Function to resolve flake inputs
+            lock = p: inputs.${p};
+
+            # Load packages with overrides applied
+            doomPkgs = pkgs.callPackage ./packages/doom-emacs-packages/overrides.nix {
+              inherit lock;
+              inherit (pkgs) git ocamlPackages;
+              inherit (pkgs.emacsPackages) elpaBuild melpaBuild emacs trivialBuild;
+            };
+          in
+          {
+            default = self.outputs.packages.${system}.doom-emacs-example;
+            doom-emacs-example = pkgs.callPackage self {
+              doomPrivateDir = ./test/doom.d;
+              doomemacsPackages = doomPkgs;
+            };
+            doomemacsPackages = doomPkgs;
           };
-        };
         checks = import ./checks.nix { inherit system; } inputs;
-      }) // {
-        hmModule = import ./modules/home-manager.nix inputs;
-      };
+      }
+    )
+    // {
+      hmModule = import ./modules/home-manager.nix inputs;
+    };
 }

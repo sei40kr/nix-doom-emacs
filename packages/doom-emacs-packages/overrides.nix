@@ -1,12 +1,59 @@
-{ lock, ocamlPackages }:
+{ lib, newScope, fetchFromGitHub, fetchFromGitLab, fetchFromGitea, fetchgit
+, melpaBuild, elpaBuild, writeText, emacs, trivialBuild
+, lock, ocamlPackages, git
+}:
 
-self: super: {
-  straightBuild = { pname, ... }@args: self.trivialBuild ({
-    ename = pname;
-    version = "1";
-    src = lock pname;
-    buildPhase = ":";
-  } // args);
+let
+  # Load generated packages
+  generatedPkgs = import ./generated.nix {
+    inherit lib newScope fetchFromGitHub fetchFromGitLab fetchFromGitea fetchgit
+            melpaBuild elpaBuild writeText emacs trivialBuild;
+  };
+
+  # Define overrides
+  overrides = self: super: {
+    straightBuild = { pname, ... }@args: self.trivialBuild ({
+      ename = pname;
+      version = "1";
+      src = lock pname;
+      buildPhase = ":";
+    } // args);
+
+    straight = self.trivialBuild {
+      pname = "straight";
+      ename = "straight";
+      version = super.straight.version;
+      src = super.straight.src;
+      nativeBuildInputs = [ git ];
+    };
+
+    all-the-icons = self.trivialBuild {
+      pname = "all-the-icons";
+      ename = "all-the-icons";
+      version = super.all-the-icons.version;
+      src = super.all-the-icons.src;
+      postInstall = ''
+        cp -r $src/data $out/share/emacs/site-lisp/
+      '';
+    };
+
+    evil-escape = self.trivialBuild {
+      pname = "evil-escape";
+      ename = "evil-escape";
+      version = super.evil-escape.version;
+      src = super.evil-escape.src;
+      buildPhase = ":";
+    };
+
+    elisp-demos = self.trivialBuild {
+      pname = "elisp-demos";
+      ename = "elisp-demos";
+      version = super.elisp-demos.version;
+      src = super.elisp-demos.src;
+      postInstall = ''
+        cp -r $src/*.org $out/share/emacs/site-lisp/ || true
+      '';
+    };
 
   doom-snippets = self.straightBuild {
     pname = "doom-snippets";
@@ -31,6 +78,30 @@ self: super: {
   evil-quick-diff = self.straightBuild {
     pname = "evil-quick-diff";
   };
+
+  # use-package needs to be built with melpaBuild instead of elpaBuild
+  use-package = melpaBuild {
+    pname = "use-package";
+    version = "20220625.1237";
+    commit = "0ad5d9d5d8a61517a207ab04bf69e71c081149eb";
+
+    src = fetchFromGitHub {
+      owner = "jwiegley";
+      repo = "use-package";
+      rev = "0ad5d9d5d8a61517a207ab04bf69e71c081149eb";
+      hash = "sha256-nJcSaWcHAanGluVj4rhyHn3jY2i8O8TdpjLHSEgKT4Q=";
+    };
+
+    recipe = writeText "recipe" ''
+      (use-package :fetcher github :repo "jwiegley/use-package")
+    '';
+
+    packageRequires = [ ];
+  };
+
+  # git-commit is provided by magit package (via lisp/git-*.el in :files)
+  # Create an alias so nix-straight can find it
+  git-commit = super.magit;
 
   magit = super.magit.overrideAttrs (esuper: {
     preBuild = ''
@@ -76,7 +147,7 @@ self: super: {
   };
 
   restart-emacs = super.restart-emacs.overrideAttrs (esuper: {
-    patches = [ ./patches/restart-emacs.patch ];
+    patches = [ ../../patches/restart-emacs.patch ];
   });
 
   revealjs = self.straightBuild {
@@ -134,4 +205,6 @@ self: super: {
       ln -snf $out/share/emacs/site-lisp $out/share/emacs/site-lisp/editor-integration/emacs
     '';
   });
-}
+  };
+in
+  generatedPkgs.overrideScope' overrides

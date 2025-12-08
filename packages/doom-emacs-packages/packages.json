@@ -1,0 +1,4783 @@
+[
+  {
+    "name": "auto-minor-mode",
+    "rev": "17cfa1b54800fdef2975c0c0531dad34846a5065",
+    "repo": "https://github.com/joewreschnig/auto-minor-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "gcmh",
+    "rev": "0089f9c3a6d4e9a310d0791cf6fa8f35642ecfd9",
+    "repo": "https://gitlab.com/koral/gcmh",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "explain-pause-mode",
+    "rev": "2356c8c3639cbeeb9751744dbe737267849b4b51",
+    "repo": "https://github.com/lastquestion/explain-pause-mode",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "straight",
+    "rev": "fed215348076ba9182f634e0770a175220474b5a",
+    "repo": "https://github.com/radian-software/straight.el",
+    "files": [
+      "straight*.el"
+    ],
+    "registry": null
+  },
+  {
+    "name": "use-package",
+    "rev": "0ad5d9d5d8a61517a207ab04bf69e71c081149eb",
+    "repo": "https://github.com/jwiegley/use-package",
+    "files": null,
+    "registry": "gnu-elpa-mirror"
+  },
+  {
+    "name": "all-the-icons",
+    "rev": "b18db6be0a290e8f91fd8d8340b2b44c8b75049a",
+    "repo": "https://github.com/domtronn/all-the-icons.el",
+    "files": [
+      ":defaults",
+      "data"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "hide-mode-line",
+    "rev": "bc5d293576c5e08c29e694078b96a5ed85631942",
+    "repo": "https://github.com/hlissner/emacs-hide-mode-line",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "highlight-numbers",
+    "rev": "8b4744c7f46c72b1d3d599d4fb75ef8183dee307",
+    "repo": "https://github.com/Fanael/highlight-numbers",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "rainbow-delimiters",
+    "rev": "a32b39bdfe6c61c322c37226d66e1b6d4f107ed0",
+    "repo": "https://github.com/Fanael/rainbow-delimiters",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "restart-emacs",
+    "rev": "1607da2bc657fe05ae01f7fdf26f716eafead02c",
+    "repo": "https://github.com/iqbalansari/restart-emacs",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "better-jumper",
+    "rev": "47622213783ece37d5337dc28d33b530540fc319",
+    "repo": "https://github.com/gilbertw1/better-jumper",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "dtrt-indent",
+    "rev": "d4fd1b4977eb0d534844fddf01c3c51c70c57205",
+    "repo": "https://github.com/jscheid/dtrt-indent",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "helpful",
+    "rev": "94a07d49a80f66f8ebc54a49a4b4f6899a65fbe3",
+    "repo": "https://github.com/Wilfred/helpful",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "pcre2el",
+    "rev": "0b5b2a2c173aab3fd14aac6cf5e90ad3bf58fa7d",
+    "repo": "https://github.com/joddie/pcre2el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "smartparens",
+    "rev": "8b6a3c3b31afd5b3f846e09859b5fc62eb06e7c1",
+    "repo": "https://github.com/Fuco1/smartparens",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ws-butler",
+    "rev": "572a10c11b6cb88293de48acbb59a059d36f9ba5",
+    "repo": "https://github.com/hlissner/ws-butler",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "projectile",
+    "rev": "dc6e7ff658789e4c6cf7c32a4b4fdf22ef9bc5a3",
+    "repo": "https://github.com/bbatsov/projectile",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "project",
+    "rev": "2e8da1b811d5213bd143d9d036bf7ea14741a1ae",
+    "repo": "https://elpa.gnu.org/packages/project.html",
+    "files": null,
+    "registry": "gnu-elpa-mirror"
+  },
+  {
+    "name": "general",
+    "rev": "9651024e7f40a8ac5c3f31f8675d3ebe2b667344",
+    "repo": "https://github.com/noctuid/general.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "which-key",
+    "rev": "1ab1d0cc88843c9a614ed3226c5a1070e32e4823",
+    "repo": "https://github.com/justbur/emacs-which-key",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "calfw",
+    "rev": "03abce97620a4a7f7ec5f911e669da9031ab9088",
+    "repo": "https://github.com/kiwanami/emacs-calfw",
+    "files": [
+      "calfw.el",
+      "calfw-compat.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "calfw-org",
+    "rev": "03abce97620a4a7f7ec5f911e669da9031ab9088",
+    "repo": "https://github.com/kiwanami/emacs-calfw",
+    "files": [
+      "calfw-org.el",
+      "calfw-compat.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "calfw-cal",
+    "rev": "03abce97620a4a7f7ec5f911e669da9031ab9088",
+    "repo": "https://github.com/kiwanami/emacs-calfw",
+    "files": [
+      "calfw-cal.el",
+      "calfw-compat.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "calfw-ical",
+    "rev": "03abce97620a4a7f7ec5f911e669da9031ab9088",
+    "repo": "https://github.com/kiwanami/emacs-calfw",
+    "files": [
+      "calfw-ical.el",
+      "calfw-compat.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "org-gcal",
+    "rev": "f8075bd8eac7288eea1060077ca103d5fd01fb65",
+    "repo": "https://github.com/kidd/org-gcal.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "emms",
+    "rev": "b55bc4fe185799e7821322b60d1707cba2adddfc",
+    "repo": "https://git.savannah.gnu.org/git/emms.git",
+    "files": [
+      ":defaults",
+      [
+        ":exclude",
+        "doc/fdl.texi",
+        "doc/gpl.texi"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "emacs-everywhere",
+    "rev": "0d0d1854299aa50edb3fd57317949c00f3fcbb03",
+    "repo": "https://github.com/tecosaur/emacs-everywhere",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "circe",
+    "rev": "41cdc116b09818d33f5cb0fc1d72c025c23aa2f1",
+    "repo": "https://github.com/emacs-circe/circe",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "circe-notifications",
+    "rev": "291149ac12877bbd062da993479d3533a26862b0",
+    "repo": "https://github.com/eqyiel/circe-notifications",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "elfeed",
+    "rev": "162d7d545ed41c27967d108c04aa31f5a61c8e16",
+    "repo": "https://github.com/skeeto/elfeed",
+    "files": [
+      ":defaults",
+      "README.md"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "elfeed-goodies",
+    "rev": "c9d9cd196746add3010d74f43b5c9866562f39fb",
+    "repo": "https://github.com/jeetelongname/elfeed-goodies",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "elfeed-org",
+    "rev": "d28c858303e60dcb3a6eb18ea85ee3cb9e3dd623",
+    "repo": "https://github.com/remyhonig/elfeed-org",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "twittering-mode",
+    "rev": "114891e8fdb4f06b1326a6cf795e49c205cf9e29",
+    "repo": "https://github.com/hayamiz/twittering-mode",
+    "files": null,
+    "registry": "el-get"
+  },
+  {
+    "name": "avy",
+    "rev": "ba5f035be33693d1a136a5cbeedb24327f551a92",
+    "repo": "https://github.com/abo-abo/avy",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "langtool",
+    "rev": "8276eccc5587bc12fd205ee58a7a982f0a136e41",
+    "repo": "https://github.com/mhayashi1120/Emacs-langtool",
+    "files": [
+      "langtool.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "writegood-mode",
+    "rev": "ed42d918d98826ad88928b7af9f2597502afc6b0",
+    "repo": "https://github.com/bnbeckwith/writegood-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "spell-fu",
+    "rev": "8185467b24f05bceb428a0e9909651ec083cc54e",
+    "repo": "https://github.com/emacsmirror/spell-fu",
+    "files": null,
+    "registry": "emacsmirror"
+  },
+  {
+    "name": "flyspell-correct",
+    "rev": "e9fde6f93af991b0528d6ed47d44bed470dc70af",
+    "repo": "https://github.com/d12frosted/flyspell-correct",
+    "files": [
+      "flyspell-correct.el",
+      "flyspell-correct-ido.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "flyspell-correct-ivy",
+    "rev": "e9fde6f93af991b0528d6ed47d44bed470dc70af",
+    "repo": "https://github.com/d12frosted/flyspell-correct",
+    "files": [
+      "flyspell-correct-ivy.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "flyspell-correct-helm",
+    "rev": "e9fde6f93af991b0528d6ed47d44bed470dc70af",
+    "repo": "https://github.com/d12frosted/flyspell-correct",
+    "files": [
+      "flyspell-correct-helm.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "flyspell-correct-popup",
+    "rev": "e9fde6f93af991b0528d6ed47d44bed470dc70af",
+    "repo": "https://github.com/d12frosted/flyspell-correct",
+    "files": [
+      "flyspell-correct-popup.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "flyspell-lazy",
+    "rev": "0fc5996bcee20b46cbd227ae948d343c3bef7339",
+    "repo": "https://github.com/rolandwalker/flyspell-lazy",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck",
+    "rev": "784f184cdd9f9cb4e3dbb997c09d93e954142842",
+    "repo": "https://github.com/flycheck/flycheck",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-popup-tip",
+    "rev": "ef86aad907f27ca076859d8d9416f4f7727619c6",
+    "repo": "https://github.com/flycheck/flycheck-popup-tip",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-posframe",
+    "rev": "8f60c9bf124ab9597d681504a73fdf116a0bde12",
+    "repo": "https://github.com/alexmurray/flycheck-posframe",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "company",
+    "rev": "1005540b1cdf176cbcf893b2fa83d2075cbbe3ca",
+    "repo": "https://github.com/company-mode/company-mode",
+    "files": [
+      ":defaults",
+      "icons",
+      [
+        "images/small",
+        "doc/images/small/*.png"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "company-dict",
+    "rev": "cd7b8394f6014c57897f65d335d6b2bd65dab1f4",
+    "repo": "https://github.com/hlissner/emacs-company-dict",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "company-box",
+    "rev": "f9cbbc7df8efbb56a8d31a5b422d158660d9109e",
+    "repo": "https://github.com/sebastiencs/company-box",
+    "files": [
+      ":defaults",
+      "images"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "helm",
+    "rev": "1003539c2ec66e7697903f4b4cb354adea70040e",
+    "repo": "https://github.com/emacs-helm/helm",
+    "files": [
+      ":defaults",
+      "emacs-helm.sh",
+      [
+        ":exclude",
+        "helm-lib.el",
+        "helm-source.el",
+        "helm-multi-match.el",
+        "helm-core.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-rg",
+    "rev": "ee0a3c09da0c843715344919400ab0a0190cc9dc",
+    "repo": "https://github.com/cosmicexplorer/helm-rg",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-c-yasnippet",
+    "rev": "e214eec8b2875d8a7cd09006dfb6a8e15e9e4079",
+    "repo": "https://github.com/emacs-jp/helm-c-yasnippet",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-company",
+    "rev": "6eb5c2d730a60e394e005b47c1db018697094dde",
+    "repo": "https://github.com/Sodel-the-Vociferous/helm-company",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-describe-modes",
+    "rev": "11fb36af119b784539d31c6160002de1957408aa",
+    "repo": "https://github.com/emacs-helm/helm-describe-modes",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "helm-projectile",
+    "rev": "58123f14c392021714fc5d23b9f95c7f95ce07f1",
+    "repo": "https://github.com/bbatsov/helm-projectile",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "swiper-helm",
+    "rev": "93fb6db87bc6a5967898b5fd3286954cc72a0008",
+    "repo": "https://github.com/abo-abo/swiper-helm",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-flx",
+    "rev": "27dd9e3ce385a3ca15092150e65781de14b5b00b",
+    "repo": "https://github.com/PythonNut/helm-flx",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "posframe",
+    "rev": "c91d4d53fa479ceb604071008ce0a901770eff57",
+    "repo": "https://github.com/tumashu/posframe",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-org",
+    "rev": "d67186d3a64e610c03a5f3d583488f018fb032e4",
+    "repo": "https://github.com/emacs-helm/helm-org",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-icons",
+    "rev": "8d2f5e705c8b78a390677cf242024739c932fc95",
+    "repo": "https://github.com/emacsmirror/helm-icons",
+    "files": null,
+    "registry": "emacsmirror"
+  },
+  {
+    "name": "helm-descbinds",
+    "rev": "b72515982396b6e336ad7beb6767e95a80fca192",
+    "repo": "https://github.com/emacs-helm/helm-descbinds",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "flx-ido",
+    "rev": "e3b3f0533e44c5250ce73d728b59a7e96c692b5d",
+    "repo": "https://github.com/lewang/flx",
+    "files": [
+      "flx-ido.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "ido-completing-read+",
+    "rev": "49e7967ea8c0ab0a206b40d70fc19be115083fa1",
+    "repo": "https://github.com/DarwinAwardWinner/ido-completing-read-plus",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ido-sort-mtime",
+    "rev": "f638ff0c922af862f5211779f2311a27fde428eb",
+    "repo": "https://github.com/pkkm/ido-sort-mtime",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ido-vertical-mode",
+    "rev": "b1659e967da0687abceca733b389ace24004fa66",
+    "repo": "https://github.com/creichert/ido-vertical-mode.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "crm-custom",
+    "rev": "f1aaccf64306a5f99d9bf7ba815d7ea41c15518d",
+    "repo": "https://github.com/DarwinAwardWinner/crm-custom",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "swiper",
+    "rev": "764e0d35ba63adb893743f27a979144477d9bfb9",
+    "repo": "https://github.com/abo-abo/swiper",
+    "files": [
+      "swiper.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "ivy",
+    "rev": "764e0d35ba63adb893743f27a979144477d9bfb9",
+    "repo": "https://github.com/abo-abo/swiper",
+    "files": [
+      ":defaults",
+      "doc/ivy-help.org",
+      [
+        ":exclude",
+        "swiper.el",
+        "counsel.el",
+        "ivy-hydra.el",
+        "ivy-avy.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "ivy-hydra",
+    "rev": "764e0d35ba63adb893743f27a979144477d9bfb9",
+    "repo": "https://github.com/abo-abo/swiper",
+    "files": [
+      "ivy-hydra.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "ivy-avy",
+    "rev": "764e0d35ba63adb893743f27a979144477d9bfb9",
+    "repo": "https://github.com/abo-abo/swiper",
+    "files": [
+      "ivy-avy.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "counsel",
+    "rev": "764e0d35ba63adb893743f27a979144477d9bfb9",
+    "repo": "https://github.com/abo-abo/swiper",
+    "files": [
+      "counsel.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "amx",
+    "rev": "37f9c7ae55eb0331b27200fb745206fc58ceffc0",
+    "repo": "https://github.com/DarwinAwardWinner/amx",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "counsel-projectile",
+    "rev": "40d1e1d4bb70acb00fddd6f4df9778bf2c52734b",
+    "repo": "https://github.com/ericdanan/counsel-projectile",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ivy-rich",
+    "rev": "600b8183ed0be8668dcc548cc2c8cb94b001363b",
+    "repo": "https://github.com/Yevgnen/ivy-rich",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "wgrep",
+    "rev": "f9687c28bbc2e84f87a479b6ce04407bb97cfb23",
+    "repo": "https://github.com/mhayashi1120/Emacs-wgrep",
+    "files": [
+      "wgrep.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "ivy-prescient",
+    "rev": "c5295a9eecbd2935bb57684a4422638e03bf738c",
+    "repo": "https://github.com/radian-software/prescient.el",
+    "files": [
+      "ivy-prescient.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "flx",
+    "rev": "e3b3f0533e44c5250ce73d728b59a7e96c692b5d",
+    "repo": "https://github.com/lewang/flx",
+    "files": [
+      "flx.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "ivy-posframe",
+    "rev": "533a8e368fcabfd534761a5c685ce713376fa594",
+    "repo": "https://github.com/tumashu/ivy-posframe",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "all-the-icons-ivy",
+    "rev": "a70cbfa1effe36efc946a823a580cec686d5e88d",
+    "repo": "https://github.com/asok/all-the-icons-ivy",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "vertico",
+    "rev": "2ad46196653b8a873adf11aee949d621af8ff6bc",
+    "repo": "https://github.com/minad/vertico",
+    "files": [
+      "*.el",
+      "extensions/*.el"
+    ],
+    "registry": null
+  },
+  {
+    "name": "orderless",
+    "rev": "8b9af2796fa0eb87eea4140bc08d16880a493803",
+    "repo": "https://github.com/oantolin/orderless",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "consult",
+    "rev": "6319aec3513cd587a8817269bc32c8283d419710",
+    "repo": "https://github.com/minad/consult",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "compat",
+    "rev": "cc1924fd8b3f9b75b26bf93f084ea938c06f9615",
+    "repo": "https://github.com/emacs-compat/compat",
+    "files": null,
+    "registry": "gnu-elpa-mirror"
+  },
+  {
+    "name": "consult-dir",
+    "rev": "d397ca6ea67af4d3c59a330a778affd825f0efd9",
+    "repo": "https://github.com/karthink/consult-dir",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "consult-flycheck",
+    "rev": "9b40f136c017fadf6239d7602d16bf73b4ad5198",
+    "repo": "https://github.com/minad/consult-flycheck",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "embark",
+    "rev": "5d0459d27aa7cf738b5af36cf862723a62bef955",
+    "repo": "https://github.com/oantolin/embark",
+    "files": [
+      "embark.el",
+      "embark-org.el",
+      "embark.texi"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "embark-consult",
+    "rev": "5d0459d27aa7cf738b5af36cf862723a62bef955",
+    "repo": "https://github.com/oantolin/embark",
+    "files": [
+      "embark-consult.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "marginalia",
+    "rev": "69442c2d9472b665f698f67426cd255f6c0620a3",
+    "repo": "https://github.com/minad/marginalia",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "all-the-icons-completion",
+    "rev": "286e2c064a1298be0d8d4100dc91d7a7a554d04a",
+    "repo": "https://github.com/iyefrat/all-the-icons-completion",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "vertico-posframe",
+    "rev": "7ca364d319e7ba8ccba26a0d57513f3e66f1b05b",
+    "repo": "https://github.com/tumashu/vertico-posframe",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "drag-stuff",
+    "rev": "6d06d846cd37c052d79acd0f372c13006aa7e7c8",
+    "repo": "https://github.com/rejeep/drag-stuff.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "link-hint",
+    "rev": "676dac6621e321b33a8d396fa27dd0ea619d21e3",
+    "repo": "https://github.com/noctuid/link-hint.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "expand-region",
+    "rev": "7e5bbe2763c12bae3e77fe0c49bcad05ff91dbfe",
+    "repo": "https://github.com/magnars/expand-region.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil",
+    "rev": "157af04d2cf466e301e82b0e667c5e7203fd96a2",
+    "repo": "https://github.com/emacs-evil/evil",
+    "files": [
+      ":defaults",
+      "doc/build/texinfo/evil.texi",
+      [
+        ":exclude",
+        "evil-test-helpers.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-args",
+    "rev": "2671071a4a57eaee7cc8c27b9e4b6fc60fd2ccd3",
+    "repo": "https://github.com/wcsmith/evil-args",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-easymotion",
+    "rev": "f96c2ed38ddc07908db7c3c11bcd6285a3e8c2e9",
+    "repo": "https://github.com/PythonNut/evil-easymotion",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-embrace",
+    "rev": "7b5a539cfe7db238d860122c793a0cb2d329cc6e",
+    "repo": "https://github.com/cute-jumper/evil-embrace.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-escape",
+    "rev": "819f1ee1cf3f69a1ae920e6004f2c0baeebbe077",
+    "repo": "https://github.com/hlissner/evil-escape",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "evil-exchange",
+    "rev": "5f0a2d41434c17c6fb02e4f744043775de1c63a2",
+    "repo": "https://github.com/Dewdrops/evil-exchange",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-indent-plus",
+    "rev": "b4dacbfdb57f474f798bfbf5026d434d549eb65c",
+    "repo": "https://github.com/TheBB/evil-indent-plus",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-lion",
+    "rev": "4da660e124731ed65e7aaa6c067c30e876619429",
+    "repo": "https://github.com/edkolev/evil-lion",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-nerd-commenter",
+    "rev": "386cd758a477d1b1ba742ef698ecc19916b43fbe",
+    "repo": "https://github.com/redguardtoo/evil-nerd-commenter",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-numbers",
+    "rev": "08f0c1ee93b8a563770eaefaf21ab9087fca7bdb",
+    "repo": "https://github.com/juliapath/evil-numbers",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-snipe",
+    "rev": "c07788c35cf8cd8e652a494322fdc0643e30a89f",
+    "repo": "https://github.com/hlissner/evil-snipe",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-surround",
+    "rev": "c9e1449bf3f740b5e9b99e7820df4eca7fc7cf02",
+    "repo": "https://github.com/emacs-evil/evil-surround",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-textobj-anyblock",
+    "rev": "29280cd71a05429364cdceef2ff595ae8afade4d",
+    "repo": "https://github.com/willghatch/evil-textobj-anyblock",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "evil-traces",
+    "rev": "290b5323542c46af364ec485c8ec9000040acf90",
+    "repo": "https://github.com/mamapanda/evil-traces",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-visualstar",
+    "rev": "06c053d8f7381f91c53311b1234872ca96ced752",
+    "repo": "https://github.com/bling/evil-visualstar",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "exato",
+    "rev": "aee7af7b7a0e7551478f453d1de7d5b9cb2e06c4",
+    "repo": "https://github.com/ninrod/exato",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-quick-diff",
+    "rev": "69c883720b30a892c63bc89f49d4f0e8b8028908",
+    "repo": "https://github.com/rgrinberg/evil-quick-diff",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "neotree",
+    "rev": "98fe21334affaffe2334bf7c987edaf1980d2d0b",
+    "repo": "https://github.com/jaypei/emacs-neotree",
+    "files": [
+      ":defaults",
+      "icons"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-collection",
+    "rev": "6cc02b238cde28d850ac68ce429d24dd1e354ad4",
+    "repo": "https://github.com/emacs-evil/evil-collection",
+    "files": [
+      ":defaults",
+      "modes"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "yasnippet",
+    "rev": "5cbdbf0d2015540c59ed8ee0fcf4788effdf75b6",
+    "repo": "https://github.com/joaotavora/yasnippet",
+    "files": [
+      "yasnippet.el",
+      "snippets"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "vimish-fold",
+    "rev": "a6501cbfe3db791f9ca17fd986c7202a87f3adb8",
+    "repo": "https://github.com/matsievskiysv/vimish-fold",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-vimish-fold",
+    "rev": "b6e0e6b91b8cd047e80debef1a536d9d49eef31a",
+    "repo": "https://github.com/alexmurray/evil-vimish-fold",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ts-fold",
+    "rev": "01d6485398a553a4fc4bbb3910edeb881c657f1f",
+    "repo": "https://github.com/jcs090218/ts-fold",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "format-all",
+    "rev": "47d862d40a088ca089c92cd393c6dca4628f87d3",
+    "repo": "https://github.com/lassik/emacs-format-all-the-code",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "god-mode",
+    "rev": "fac7d26ecde1be5b0bf6bd6e0ec5b4895be13906",
+    "repo": "https://github.com/emacsorphanage/god-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "lispy",
+    "rev": "df1b7e614fb0f73646755343e8892ddda310f427",
+    "repo": "https://github.com/abo-abo/lispy",
+    "files": [
+      ":defaults",
+      "lispy-clojure.clj",
+      "lispy-clojure.cljs",
+      "lispy-python.py"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "lispyville",
+    "rev": "9c14bed0359f659e246d345c706f895737c3d172",
+    "repo": "https://github.com/noctuid/lispyville",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-multiedit",
+    "rev": "23b53bc8743fb82a8854ba907b1d277374c93a79",
+    "repo": "https://github.com/hlissner/evil-multiedit",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-mc",
+    "rev": "63fd2fe0c213a4cc31c464d246f92931c4cb720f",
+    "repo": "https://github.com/gabesoft/evil-mc",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "multiple-cursors",
+    "rev": "aae47aebc0ae829211fa1e923232715d8e327b36",
+    "repo": "https://github.com/magnars/multiple-cursors.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "objed",
+    "rev": "70f9fb5e0aa1627b0afc7c6b3d0aea9bac70a210",
+    "repo": "https://github.com/clemera/objed",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "parinfer-rust-mode",
+    "rev": "c2c1bbec6cc7dad4f546868aa07609b8d58a78f8",
+    "repo": "https://github.com/justinbarclay/parinfer-rust-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "rotate-text",
+    "rev": "48f193697db996855aee1ad2bc99b38c6646fe76",
+    "repo": "https://github.com/debug-ito/rotate-text.el",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "auto-yasnippet",
+    "rev": "db9e0dd4335b2202cd5dac95bbbc87a1032d9bbe",
+    "repo": "https://github.com/abo-abo/auto-yasnippet",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "doom-snippets",
+    "rev": "2d031f723164c6500ce68dcafe3dd30e6d3b23b1",
+    "repo": "https://github.com/doomemacs/snippets",
+    "files": [
+      ":defaults",
+      "*"
+    ],
+    "registry": null
+  },
+  {
+    "name": "adaptive-wrap",
+    "rev": "0d5b4a07de76d87dd64333a566a8a0a845f2b9f0",
+    "repo": "https://elpa.gnu.org/packages/adaptive-wrap.html",
+    "files": null,
+    "registry": "gnu-elpa-mirror"
+  },
+  {
+    "name": "diredfl",
+    "rev": "f9140b2c42151dca669003d685c9f079b2e3dc37",
+    "repo": "https://github.com/purcell/diredfl",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "dired-git-info",
+    "rev": "9461476a28a5fec0784260f6e318237c662c3430",
+    "repo": "https://github.com/clemera/dired-git-info",
+    "files": null,
+    "registry": "gnu-elpa-mirror"
+  },
+  {
+    "name": "dired-rsync",
+    "rev": "7940d9154d0a908693999b0e1ea351a6d365c93d",
+    "repo": "https://github.com/stsquad/dired-rsync",
+    "files": [
+      "dired-rsync.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "ranger",
+    "rev": "2498519cb21dcd5791d240607a72a204d1761668",
+    "repo": "https://github.com/punassuming/ranger.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "dirvish",
+    "rev": "73dcaa404da9ab84d25f2919e6e3af4b1f8e7f37",
+    "repo": "https://github.com/alexluigit/dirvish",
+    "files": [
+      ":defaults",
+      "extensions/*.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "all-the-icons-dired",
+    "rev": "5e9b097f9950cc9f86de922b07903a4e5fefc733",
+    "repo": "https://github.com/wyuenho/all-the-icons-dired",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "fd-dired",
+    "rev": "458464771bb220b6eb87ccfd4c985c436e57dc7e",
+    "repo": "https://github.com/yqrashawn/fd-dired",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ibuffer-projectile",
+    "rev": "ecbe482804a217b1471593f6c7a8b3d64f3cdc47",
+    "repo": "https://github.com/purcell/ibuffer-projectile",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ibuffer-vc",
+    "rev": "5fa6aea09bc67f71ea743302d609f459967b1e81",
+    "repo": "https://github.com/purcell/ibuffer-vc",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "undo-tree",
+    "rev": "e326c6135e62f5fe8536528d3acd5e798f847407",
+    "repo": "https://www.dr-qubit.org/undo-tree.html",
+    "files": null,
+    "registry": "gnu-elpa-mirror"
+  },
+  {
+    "name": "undo-fu",
+    "rev": "ab8bc10e424bccc847800c31ab41888db789d55d",
+    "repo": "https://github.com/emacsmirror/undo-fu",
+    "files": null,
+    "registry": "emacsmirror"
+  },
+  {
+    "name": "undo-fu-session",
+    "rev": "3e810c7c9ab75d2b6f92c7c876290abbc164e750",
+    "repo": "https://github.com/emacsmirror/undo-fu-session",
+    "files": null,
+    "registry": "emacsmirror"
+  },
+  {
+    "name": "browse-at-remote",
+    "rev": "cef26f2c063f2473af42d0e126c8613fe2f709e4",
+    "repo": "https://github.com/rmuslimov/browse-at-remote",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "git-timemachine",
+    "rev": "ca09684e94767cc0b2339b77b778b4de4f9d104f",
+    "repo": "https://github.com/emacsmirror/git-timemachine",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "git-modes",
+    "rev": "eca3bb42ea8abed9ef8549b2ac91bbea445c5bb5",
+    "repo": "https://github.com/magit/git-modes",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "org-msg",
+    "rev": "60e22e446325a9b3387396459d98be7c1c52579d",
+    "repo": "https://github.com/jeremy-compostella/org-msg",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "mu4e-alert",
+    "rev": "b34d0ea7b75709cc25d842a783cebea855dc9f7d",
+    "repo": "https://github.com/xzz53/mu4e-alert",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "notmuch",
+    "rev": "bd243b65a9709bfd61ba80e80cc41ae3a23ea524",
+    "repo": "https://git.notmuchmail.org/git/notmuch",
+    "files": [
+      "emacs/*.el",
+      "emacs/*.svg"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "org-mime",
+    "rev": "cf96f585c68ad14751a3f73d937cbfcb890171b9",
+    "repo": "https://github.com/org-mime/org-mime",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ol-notmuch",
+    "rev": "1a53d6c707514784cabf33d865b577bf77f45913",
+    "repo": "https://github.com/tarsius/ol-notmuch",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "counsel-notmuch",
+    "rev": "a4a1562935e4180c42524c51609d1283e9be0688",
+    "repo": "https://github.com/fuxialexander/counsel-notmuch",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-notmuch",
+    "rev": "97a01497e079a7b6505987e9feba6b603bbec288",
+    "repo": "https://github.com/emacs-helm/helm-notmuch",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "consult-notmuch",
+    "rev": "4138855cddee0ef126cff6a5fc5ca9c49fd2682d",
+    "repo": "https://github.com/emacsmirror/consult-notmuch",
+    "files": null,
+    "registry": "emacsmirror"
+  },
+  {
+    "name": "apel",
+    "rev": "6947dc4605ebbb87762edf7051a78a3f7b5f17c5",
+    "repo": "https://github.com/emacsmirror/apel",
+    "files": [
+      "alist.el",
+      "apel-ver.el",
+      "apel.el",
+      "atype.el",
+      "broken.el",
+      "calist.el",
+      "emu.el",
+      "filename.el",
+      "inv-23.el",
+      "invisible.el",
+      "mcharset.el",
+      "mcs-20.el",
+      "mcs-e20.el",
+      "mule-caesar.el",
+      "path-util.el",
+      "pccl-20.el",
+      "pccl.el",
+      "pces-20.el",
+      "pces-e20.el",
+      "pces.el",
+      "pcustom.el",
+      "poe.el",
+      "poem-e20.el",
+      "poem-e20_3.el",
+      "poem.el",
+      "product.el",
+      "pym.el",
+      "richtext.el",
+      "static.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "flim",
+    "rev": "289e5bbd66f6f14306a6e0b922ee8f26267e2470",
+    "repo": "https://github.com/emacsmirror/flim",
+    "files": [
+      "*.texi",
+      "*.el",
+      [
+        ":exclude",
+        "md5-dl.el",
+        "md5-el.el",
+        "mel-b-dl.el",
+        "sha1-dl.el",
+        "smtpmail.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "semi",
+    "rev": "b1c245b81715b0430f7593cee2339e6264104f3d",
+    "repo": "https://github.com/emacsmirror/semi",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "wanderlust",
+    "rev": "e3cd5e39454737c0b641e114ddcc550122288a2a",
+    "repo": "https://github.com/emacsmirror/wanderlust",
+    "files": [
+      "doc/wl.texi",
+      "doc/wl-ja.texi",
+      "elmo/*.el",
+      "wl/*.el",
+      "etc/icons",
+      [
+        ":exclude",
+        "elmo/elmo-database.el",
+        "elmo/utf7.el",
+        "wl/wl-dnd.el",
+        "wl/wl-mule.el",
+        "wl/wl-xmas.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "pyim",
+    "rev": "02c50045cb14ab253d8d8435e83e7f10b0bbc130",
+    "repo": "https://github.com/tumashu/pyim",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "fcitx",
+    "rev": "12dc2638ddd15c8f6cfaecb20e1f428ab2bb5624",
+    "repo": "https://github.com/cute-jumper/fcitx.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ace-pinyin",
+    "rev": "47662c0b05775ba353464b44c0f1a037c85e746e",
+    "repo": "https://github.com/cute-jumper/ace-pinyin",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "pangu-spacing",
+    "rev": "f92898949ba3bf991fd229416f3bbb54e9c6c223",
+    "repo": "https://github.com/coldnew/pangu-spacing",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "migemo",
+    "rev": "f756cba3d5268968da361463c2e29b3a659a3de7",
+    "repo": "https://github.com/emacs-jp/migemo",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "avy-migemo",
+    "rev": "922a6dd82c0bfa316b0fbb56a9d4dd4ffa5707e7",
+    "repo": "https://github.com/momomo5717/avy-migemo",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ddskk",
+    "rev": "251df5b02c91311140d2375b019c1de836655fd0",
+    "repo": "https://github.com/skk-dev/ddskk",
+    "files": [
+      "context-skk.el",
+      "ddskk*.el",
+      "skk*.el",
+      "tar-util.el",
+      "doc/skk.texi",
+      "etc/skk.xpm",
+      [
+        ":exclude",
+        "skk-xemacs.el",
+        "skk-lookup.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "agda-input",
+    "rev": "b612cabaae94e8b261491c3bc718ffb4805236f0",
+    "repo": "https://github.com/agda/agda",
+    "files": [
+      "src/data/emacs-mode/agda-input.el"
+    ],
+    "registry": null
+  },
+  {
+    "name": "agda2-mode",
+    "rev": "b612cabaae94e8b261491c3bc718ffb4805236f0",
+    "repo": "https://github.com/agda/agda",
+    "files": [
+      "src/data/emacs-mode/*.el",
+      [
+        ":exclude",
+        "agda-input.el"
+      ]
+    ],
+    "registry": null
+  },
+  {
+    "name": "beancount",
+    "rev": "ea8257881b7e276e8d170d724e3b2e179f25cb77",
+    "repo": "https://github.com/beancount/beancount-mode",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "cmake-mode",
+    "rev": "d5d77de8c4c69e348b182eeb30222b2f1ba8db7b",
+    "repo": "https://github.com/emacsmirror/cmake-mode",
+    "files": [
+      ":defaults",
+      "*"
+    ],
+    "registry": null
+  },
+  {
+    "name": "cuda-mode",
+    "rev": "7f593518fd135fc6af994024bcb47986dfa502d2",
+    "repo": "https://github.com/chachi/cuda-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "demangle-mode",
+    "rev": "04f545adab066708d6151f13da65aaf519f8ac4e",
+    "repo": "https://github.com/liblit/demangle-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "disaster",
+    "rev": "10a785facc60d89d78e0d5177985ab1af1741bb4",
+    "repo": "https://github.com/jart/disaster",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "modern-cpp-font-lock",
+    "rev": "43c6b68ff58fccdf9deef11674a172e4eaa8455c",
+    "repo": "https://github.com/ludwigpacifici/modern-cpp-font-lock",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "opencl-mode",
+    "rev": "15091eff92c33ee0d1ece40eb99299ef79fee92d",
+    "repo": "https://github.com/salmanebah/opencl-mode",
+    "files": null,
+    "registry": "el-get"
+  },
+  {
+    "name": "glsl-mode",
+    "rev": "9b2e5f28e489a1f73c4aed734105618ac0dc0c43",
+    "repo": "https://github.com/jimhourihan/glsl-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "company-glsl",
+    "rev": "404cd0694ab34971f9c01eb22126cd2e7d3f9dc4",
+    "repo": "https://github.com/Kaali/company-glsl",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "ccls",
+    "rev": "675a5704c14a27931e835a431beea3631d92e8e6",
+    "repo": "https://github.com/emacs-lsp/emacs-ccls",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "irony",
+    "rev": "870d1576fb279bb93f776a71e65f45283c423a9e",
+    "repo": "https://github.com/Sarcasm/irony-mode",
+    "files": [
+      ":defaults",
+      "server"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "irony-eldoc",
+    "rev": "73e79a89fad982a2ba072f2fcc1b4e41f0aa2978",
+    "repo": "https://github.com/ikirill/irony-eldoc",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-irony",
+    "rev": "42dbecd4a865cabeb301193bb4d660e26ae3befe",
+    "repo": "https://github.com/Sarcasm/flycheck-irony",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "company-irony",
+    "rev": "b44711dfce445610c1ffaec4951c6ff3882b216a",
+    "repo": "https://github.com/Sarcasm/company-irony",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "company-irony-c-headers",
+    "rev": "72c386aeb079fb261d9ec02e39211272f76bbd97",
+    "repo": "https://github.com/hotpxl/company-irony-c-headers",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "rtags",
+    "rev": "db39790fda5c2443bc790b8971ac140914f7e9c2",
+    "repo": "https://github.com/Andersbakken/rtags",
+    "files": [
+      "src/rtags.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "ivy-rtags",
+    "rev": "db39790fda5c2443bc790b8971ac140914f7e9c2",
+    "repo": "https://github.com/Andersbakken/rtags",
+    "files": [
+      "src/ivy-rtags.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-rtags",
+    "rev": "db39790fda5c2443bc790b8971ac140914f7e9c2",
+    "repo": "https://github.com/Andersbakken/rtags",
+    "files": [
+      "src/helm-rtags.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "paredit",
+    "rev": "8330a41e8188fe18d3fa805bb9aa529f015318e8",
+    "repo": "https://github.com/emacsmirror/paredit",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "parseclj",
+    "rev": "4d0e780e00f1828b00c43099e6eebc6582998f72",
+    "repo": "https://github.com/clojure-emacs/parseclj",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "parseedn",
+    "rev": "a09686fbb9113b8b1b4f20c9e1dc0d6fea01a64f",
+    "repo": "https://github.com/clojure-emacs/parseedn",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "clojure-mode",
+    "rev": "b6f41d74904daa9312648f3a7bea7a72fd8e140b",
+    "repo": "https://github.com/clojure-emacs/clojure-mode",
+    "files": [
+      "clojure-mode.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "clj-refactor",
+    "rev": "f368c56c83843396b160440f472a661a3b639862",
+    "repo": "https://github.com/clojure-emacs/clj-refactor.el",
+    "files": [
+      ":defaults",
+      "CHANGELOG.md"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "cider",
+    "rev": "b9e1cc26e2afda003a4b6c1f2a26e04f1c45f3d0",
+    "repo": "https://github.com/clojure-emacs/cider",
+    "files": [
+      "lisp/*.el",
+      "bin/*.sh",
+      "*.el",
+      "clojure.sh",
+      "lein.sh",
+      [
+        ":exclude",
+        ".dir-locals.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-clj-kondo",
+    "rev": "ff7bed2315755cfe02ef471edf522e27b78cd5ca",
+    "repo": "https://github.com/borkdude/flycheck-clj-kondo",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "sly",
+    "rev": "4513c382f07a2a2cedb3c046231b69eae2f5e6f0",
+    "repo": "https://github.com/joaotavora/sly",
+    "files": [
+      ":defaults",
+      "lib",
+      "slynk",
+      "contrib",
+      "doc/images",
+      [
+        ":exclude",
+        "sly-autoloads.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "sly-macrostep",
+    "rev": "5113e4e926cd752b1d0bcc1508b3ebad5def5fad",
+    "repo": "https://github.com/joaotavora/sly-macrostep",
+    "files": [
+      ":defaults",
+      "*.lisp",
+      "*.asd"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "sly-repl-ansi-color",
+    "rev": "b9cd52d1cf927bf7e08582d46ab0bcf1d4fb5048",
+    "repo": "https://github.com/PuercoPop/sly-repl-ansi-color",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "proof-general",
+    "rev": "e1e29acb04f0707fb2b323727d08f0fe85fc0c02",
+    "repo": "https://github.com/ProofGeneral/PG",
+    "files": [
+      ":defaults",
+      "CHANGES",
+      "AUTHORS",
+      "COPYING",
+      "generic",
+      "images",
+      "lib",
+      [
+        "coq",
+        "coq/*.el"
+      ],
+      "easycrypt",
+      "phox",
+      "qrhl",
+      "pghaskell",
+      "pgocaml",
+      "pgshell"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "company-coq",
+    "rev": "a6e349e0131f676a885bd14c908fd26054b2df42",
+    "repo": "https://github.com/cpitclaudel/company-coq",
+    "files": [
+      ":defaults",
+      "refman"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "crystal-mode",
+    "rev": "96a8058205b24b513d0b9307db32f05e30f9570b",
+    "repo": "https://github.com/crystal-lang-tools/emacs-crystal-mode",
+    "files": [
+      "crystal-mode.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "inf-crystal",
+    "rev": "02007b2a2a3bea44902d7c83c4acba1e39d278e3",
+    "repo": "https://github.com/brantou/inf-crystal.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-crystal",
+    "rev": "96a8058205b24b513d0b9307db32f05e30f9570b",
+    "repo": "https://github.com/crystal-lang-tools/emacs-crystal-mode",
+    "files": [
+      "flycheck-crystal.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-ameba",
+    "rev": "0c4925ae0e998818326adcb47ed27ddf9761c7dc",
+    "repo": "https://github.com/crystal-ameba/ameba.el",
+    "files": [
+      "flycheck-ameba.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "csharp-mode",
+    "rev": "856ecbc0a78ae3bdc2db2ae4d16be43e2d9d9c5e",
+    "repo": "https://github.com/emacs-csharp/csharp-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "csproj-mode",
+    "rev": "a7f0f4610c976a28c41b9b8299892f88b5d0336c",
+    "repo": "https://github.com/omajid/csproj-mode",
+    "files": [
+      ":defaults",
+      "snippets"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "sln-mode",
+    "rev": "0f91d1b957c7d2a7bab9278ec57b54d57f1dbd9c",
+    "repo": "https://github.com/sensorflo/sln-mode",
+    "files": null,
+    "registry": "el-get"
+  },
+  {
+    "name": "shader-mode",
+    "rev": "d7dc8d0d6fe8914e8b6d5cf2081ad61e6952359c",
+    "repo": "https://github.com/midnightSuyama/shader-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "sharper",
+    "rev": "96edd4a1dbc267afdff0cb97298d1b05b7c2080c",
+    "repo": "https://github.com/sebasmonia/sharper",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "dart-mode",
+    "rev": "3bac14200f9f8f8fcebc383087572da5c3823c34",
+    "repo": "https://github.com/emacsorphanage/dart-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "lsp-dart",
+    "rev": "fda433671f38874f0ebe66c43c64fec14af3f492",
+    "repo": "https://github.com/emacs-lsp/lsp-dart",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "flutter",
+    "rev": "08138f8c95488aaf315a1f5d52c33deb8d28672b",
+    "repo": "https://github.com/amake/flutter.el",
+    "files": [
+      "flutter.el",
+      "flutter-project.el",
+      "flutter-l10n.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "hover",
+    "rev": "4ca0638a14a8b304ac2b46e7b342b8d8732ad199",
+    "repo": "https://github.com/ericdallo/hover.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "csv-mode",
+    "rev": "43f6106f0d4e21a18b5b7d7708d641d50fbdfa0b",
+    "repo": "https://elpa.gnu.org/packages/csv-mode.html",
+    "files": null,
+    "registry": "gnu-elpa-mirror"
+  },
+  {
+    "name": "dhall-mode",
+    "rev": "c77f1c1e75b6d2725019c5275fc102ae98d25628",
+    "repo": "https://github.com/psibi/dhall-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "elixir-mode",
+    "rev": "e0d0466d83ec80ddb412bb1473908a21baad1ec3",
+    "repo": "https://github.com/elixir-editors/emacs-elixir",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "alchemist",
+    "rev": "6f99367511ae209f8fe2c990779764bbb4ccb6ed",
+    "repo": "https://github.com/tonini/alchemist.el",
+    "files": [
+      ":defaults",
+      "*.exs",
+      "alchemist-server"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "exunit",
+    "rev": "0715c2dc2dca0b56c61330eda0690f90cca5f98b",
+    "repo": "https://github.com/ananthakumaran/exunit.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-credo",
+    "rev": "e88f11ead53805c361ec7706e44c3dfee1daa19f",
+    "repo": "https://github.com/aaronjensen/flycheck-credo",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "elm-mode",
+    "rev": "d4e434fa1857ba2f58d27c7520ebeac0515cd140",
+    "repo": "https://github.com/jcollard/elm-mode",
+    "files": [
+      ":defaults",
+      "elm.tags"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-elm",
+    "rev": "1b60050efd4729bfba548f3e5adbcb58436667cb",
+    "repo": "https://github.com/bsermons/flycheck-elm",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "highlight-quoted",
+    "rev": "24103478158cd19fbcfb4339a3f1fa1f054f1469",
+    "repo": "https://github.com/Fanael/highlight-quoted",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "macrostep",
+    "rev": "424e3734a1ee526a1bd7b5c3cd1d3ef19d184267",
+    "repo": "https://github.com/emacsorphanage/macrostep",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "overseer",
+    "rev": "02d49f582e80e36b4334c9187801c5ecfb027789",
+    "repo": "https://github.com/tonini/overseer.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "elisp-def",
+    "rev": "dfca043ec0cbead67bd9c526cb009daf771d0fa2",
+    "repo": "https://github.com/Wilfred/elisp-def",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "elisp-demos",
+    "rev": "01c301b516e9949d0239d20f6834afbc9acf0abb",
+    "repo": "https://github.com/xuchunyang/elisp-demos",
+    "files": [
+      ":defaults",
+      "*.org"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-package",
+    "rev": "615c1ed8c6fb7c73abec6aaa73d3fef498d231bc",
+    "repo": "https://github.com/purcell/flycheck-package",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-cask",
+    "rev": "4b2ede6362ded4a45678dfbef1876faa42edbd58",
+    "repo": "https://github.com/flycheck/flycheck-cask",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "buttercup",
+    "rev": "ceedad5efa797e860dbb356bc2c3028a4e0321ec",
+    "repo": "https://github.com/jorgenschaefer/emacs-buttercup",
+    "files": [
+      ":defaults",
+      "bin"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "erlang",
+    "rev": "9ba9f6e60da146b8c05e0062b7aecee823dd08ec",
+    "repo": "https://github.com/erlang/otp",
+    "files": [
+      "lib/tools/emacs/*.el",
+      [
+        ":exclude",
+        "lib/tools/emacs/erlang_appwiz.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "ess",
+    "rev": "39eba283000a7b0220303d7c5a4f3ee05efc1e9c",
+    "repo": "https://github.com/emacs-ess/ESS",
+    "files": [
+      "lisp/*.el",
+      "doc/ess.texi",
+      [
+        "etc",
+        "etc/*"
+      ],
+      [
+        "obsolete",
+        "lisp/obsolete/*"
+      ],
+      [
+        ":exclude",
+        "etc/other"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "ess-R-data-view",
+    "rev": "d6e98d3ae1e2a2ea39a56eebcdb73e99d29562e9",
+    "repo": "https://github.com/myuhe/ess-R-data-view.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "polymode",
+    "rev": "2094c92403fe395dfb2b8b2521da1012a966e9ab",
+    "repo": "https://github.com/polymode/polymode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "poly-R",
+    "rev": "e4a39caaf48e1c2e5afab3865644267b10610537",
+    "repo": "https://github.com/polymode/poly-R",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "stan-mode",
+    "rev": "150bbbe5fd3ad2b5a3dbfba9d291e66eeea1a581",
+    "repo": "https://github.com/stan-dev/stan-mode",
+    "files": [
+      "stan-mode/*.el",
+      [
+        ":exclude",
+        "stan-mode/test-*.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "eldoc-stan",
+    "rev": "150bbbe5fd3ad2b5a3dbfba9d291e66eeea1a581",
+    "repo": "https://github.com/stan-dev/stan-mode",
+    "files": [
+      "eldoc-stan/*.el",
+      "eldoc-stan/eldoc-stan.json",
+      [
+        ":exclude",
+        "eldoc-stan/test-*.el",
+        "eldoc-stan/eldoc-stan-create-json.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "company-stan",
+    "rev": "150bbbe5fd3ad2b5a3dbfba9d291e66eeea1a581",
+    "repo": "https://github.com/stan-dev/stan-mode",
+    "files": [
+      "company-stan/*.el",
+      [
+        ":exclude",
+        "company-stan/test-*.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-stan",
+    "rev": "150bbbe5fd3ad2b5a3dbfba9d291e66eeea1a581",
+    "repo": "https://github.com/stan-dev/stan-mode",
+    "files": [
+      "flycheck-stan/*.el",
+      "flycheck-stan/error_msgs.txt",
+      [
+        ":exclude",
+        "flycheck-stan/test-*.el",
+        "flycheck-stan/flycheck-stan-error-msgs.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "fuel",
+    "rev": "1aeafdb87bb8937035d06c59d8c997a58b5e53ae",
+    "repo": "https://github.com/factor/fuel",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "faustine",
+    "rev": "07a38963111518f86123802f9d477be0d4689a3f",
+    "repo": "https://bitbucket.org/yphil/faustine",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "fsharp-mode",
+    "rev": "c1e58c61f9b57ddd6c0199581ec3784e361d61b4",
+    "repo": "https://github.com/fsharp/emacs-fsharp-mode",
+    "files": [
+      ":defaults",
+      [
+        ":exclude",
+        "eglot-fsharp.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "fstar-mode",
+    "rev": "c95c2a61a6c42a1fa8bab9a8eb812a41be3e6f69",
+    "repo": "https://github.com/FStarLang/fstar-mode.el",
+    "files": [
+      ":defaults",
+      "etc"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "gdscript-mode",
+    "rev": "4badcf6a0c951daba4d7259db3913b78254c0423",
+    "repo": "https://github.com/godotengine/emacs-gdscript-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "go-eldoc",
+    "rev": "cbbd2ea1e94a36004432a9ac61414cb5a95a39bd",
+    "repo": "https://github.com/emacsorphanage/go-eldoc",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "go-guru",
+    "rev": "3273fcece5d9ab7edd4f15b2d6bce61f4e5a0666",
+    "repo": "https://github.com/dominikh/go-mode.el",
+    "files": [
+      "go-guru.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "go-mode",
+    "rev": "3273fcece5d9ab7edd4f15b2d6bce61f4e5a0666",
+    "repo": "https://github.com/dominikh/go-mode.el",
+    "files": [
+      "go-mode.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "gorepl-mode",
+    "rev": "6a73bf352e8d893f89cad36c958c4db2b5e35e07",
+    "repo": "https://github.com/manute/gorepl-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "go-tag",
+    "rev": "59b243f2fa079d9de9d56f6e2d94397e9560310a",
+    "repo": "https://github.com/brantou/emacs-go-tag",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "go-gen-test",
+    "rev": "35df36dcd555233ee1a618c0f6a58ce6db4154d9",
+    "repo": "https://github.com/s-kostyaev/go-gen-test",
+    "files": [
+      "go-gen-test.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "company-go",
+    "rev": "31948b463f2fc18f8801e5a8fe511fef300eb3dd",
+    "repo": "https://github.com/emacsattic/company-go",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-golangci-lint",
+    "rev": "8e446c68311048f0b87febf8ef0379e29d358851",
+    "repo": "https://github.com/weijiangan/flycheck-golangci-lint",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "graphql-mode",
+    "rev": "9740e4027bd9313697d5cac5caaa5b15626ab1da",
+    "repo": "https://github.com/davazp/graphql-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "graphql-doc",
+    "rev": "d37140267e0c426c7c18aff31900aa1650257394",
+    "repo": "https://github.com/ifitzpatrick/graphql-doc.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "company-graphql",
+    "rev": "aed9f5109e877944a895d08fc08bad103f03096b",
+    "repo": "https://github.com/thaenalpha/company-graphql",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "haskell-mode",
+    "rev": "cb573c8db5b856eb37473009f2c62e0717a1cd02",
+    "repo": "https://github.com/haskell/haskell-mode",
+    "files": [
+      ":defaults",
+      "NEWS",
+      "logo.svg"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "lsp-haskell",
+    "rev": "7cf64944ab3a25ea5d6f8d5e0cd33124182df991",
+    "repo": "https://github.com/emacs-lsp/lsp-haskell",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "hy-mode",
+    "rev": "df814865a1faa8414dacdbb35b2a9029995312ec",
+    "repo": "https://github.com/hylang/hy-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "idris-mode",
+    "rev": "65d6db1b7574ceccd3d97eee3790c2f74aa9724d",
+    "repo": "https://github.com/idris-hackers/idris-mode",
+    "files": [
+      ":defaults",
+      "logo-small.png"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "android-mode",
+    "rev": "d5332e339a1f5e30559a53feffb8442ca79265d6",
+    "repo": "https://github.com/emacsmirror/android-mode",
+    "files": null,
+    "registry": "emacsmirror"
+  },
+  {
+    "name": "groovy-mode",
+    "rev": "bf732d367b16887f81d404481c11ed1a58671d4e",
+    "repo": "https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes",
+    "files": [
+      "*groovy*.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "meghanada",
+    "rev": "59c46cabb7eee715fe810ce59424934a1286df84",
+    "repo": "https://github.com/mopemope/meghanada-emacs",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "eclim",
+    "rev": "222ddd48fcf0ee01592dec77c58e0cf3f2ea1100",
+    "repo": "https://github.com/emacs-eclim/emacs-eclim",
+    "files": null,
+    "registry": "el-get"
+  },
+  {
+    "name": "company-emacs-eclim",
+    "rev": "222ddd48fcf0ee01592dec77c58e0cf3f2ea1100",
+    "repo": "https://github.com/emacsmirror/company-emacs-eclim",
+    "files": null,
+    "registry": "emacsmirror"
+  },
+  {
+    "name": "lsp-java",
+    "rev": "0968038b9aea52ef3bf499e597cf3800d913c059",
+    "repo": "https://github.com/emacs-lsp/lsp-java",
+    "files": [
+      ":defaults",
+      "icons"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "rjsx-mode",
+    "rev": "b697fe4d92cc84fa99a7bcb476f815935ea0d919",
+    "repo": "https://github.com/felipeochoa/rjsx-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "typescript-mode",
+    "rev": "88f317f0b6aef8f8d232e912fdbc679799580c56",
+    "repo": "https://github.com/emacs-typescript/typescript.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "js2-refactor",
+    "rev": "a0977c4ce1918cc266db9d6cd7a2ab63f3a76b9a",
+    "repo": "https://github.com/js-emacs/js2-refactor.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "npm-mode",
+    "rev": "3ee7c0bad5b7a041d4739ef3aaa06a3dc764e5eb",
+    "repo": "https://github.com/mojochao/npm-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "add-node-modules-path",
+    "rev": "63f047fd84b825876152743f66de7ee6f9ed203b",
+    "repo": "https://github.com/codesuki/add-node-modules-path",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "nodejs-repl",
+    "rev": "3b841055cad00f442e4a9159b1056f59411b6646",
+    "repo": "https://github.com/abicky/nodejs-repl.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "skewer-mode",
+    "rev": "e5bed351939c92a1f788f78398583c2f83f1bb3c",
+    "repo": "https://github.com/skeeto/skewer-mode",
+    "files": [
+      "*.html",
+      "*.js",
+      "*.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "tide",
+    "rev": "b93e555858edc331ba33d1d8bd4582d578c7ca31",
+    "repo": "https://github.com/ananthakumaran/tide",
+    "files": [
+      ":defaults",
+      "tsserver"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "xref-js2",
+    "rev": "fd6b723e7f1f9793d189a815e1904364dc026b03",
+    "repo": "https://github.com/js-emacs/xref-js2",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "json-mode",
+    "rev": "eedb4560034f795a7950fa07016bd4347c368873",
+    "repo": "https://github.com/json-emacs/json-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "json-snatcher",
+    "rev": "b28d1c0670636da6db508d03872d96ffddbc10f2",
+    "repo": "https://github.com/Sterlingg/json-snatcher",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "counsel-jq",
+    "rev": "8cadd2e96470402ede4881b4e955872976443689",
+    "repo": "https://github.com/200ok-ch/counsel-jq",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "julia-mode",
+    "rev": "47f43f7d839019cac3ba6559d93b29487ca118cb",
+    "repo": "https://github.com/JuliaEditorSupport/julia-emacs",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "julia-repl",
+    "rev": "6c1d63511fb2b3b3f2e342eff6a375d78be6c12c",
+    "repo": "https://github.com/tpapp/julia-repl",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "eglot-jl",
+    "rev": "2e35cf9768d97a0429a72deddbe30d6d7722d454",
+    "repo": "https://github.com/non-Jedi/eglot-jl",
+    "files": [
+      ":defaults",
+      "*.jl",
+      "*.toml"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "lsp-julia",
+    "rev": "d6688bb131ff4a5a0201f6d3826ef0b018265389",
+    "repo": "https://github.com/gdkrmr/lsp-julia",
+    "files": [
+      ":defaults",
+      "languageserver"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "kotlin-mode",
+    "rev": "3e0c34087ba4965a8bf08d3f27325f0a1e631bfb",
+    "repo": "https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-kotlin",
+    "rev": "bf1b398bdde128806a0a7479ebbe369bbaa40dae",
+    "repo": "https://github.com/whirm/flycheck-kotlin",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "auctex",
+    "rev": "830e40a0639aedc6c362a3a01e160aaa8246bb99",
+    "repo": "https://www.gnu.org/software/auctex/",
+    "files": [
+      "*.el",
+      "*.info",
+      "dir",
+      "doc",
+      "etc",
+      "images",
+      "latex",
+      "style"
+    ],
+    "registry": "gnu-elpa-mirror"
+  },
+  {
+    "name": "latex-preview-pane",
+    "rev": "5297668a89996b50b2b62f99cba01cc544dbed2e",
+    "repo": "https://github.com/jsinglet/latex-preview-pane",
+    "files": [
+      "*.el",
+      "*.txt"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-tex",
+    "rev": "0fa85c3fc88d96621002b5a1b79efcc06776642f",
+    "repo": "https://github.com/iyefrat/evil-tex",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "auctex-latexmk",
+    "rev": "4d353522650d7685acbf1d38f7dbc504f734bd84",
+    "repo": "https://github.com/emacsmirror/auctex-latexmk",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "cdlatex",
+    "rev": "8e963c68531f75e459e8ebe7a34fd3ba9d3729a0",
+    "repo": "https://github.com/cdominik/cdlatex",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "company-auctex",
+    "rev": "9400a2ec7459dde8cbf1a5d50dfee4e300ed7e18",
+    "repo": "https://github.com/alexeyr/company-auctex",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "company-reftex",
+    "rev": "42eb98c6504e65989635d95ab81b65b9d5798e76",
+    "repo": "https://github.com/TheBB/company-reftex",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "company-math",
+    "rev": "45778f5731c97a21a83e3b965cbde42018709afd",
+    "repo": "https://github.com/vspinu/company-math",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "lean-mode",
+    "rev": "c1c68cc946eb31b6ba8faefdceffce1f77ca52df",
+    "repo": "https://github.com/emacsmirror/lean-mode",
+    "files": null,
+    "registry": "emacsmirror"
+  },
+  {
+    "name": "company-lean",
+    "rev": "c1c68cc946eb31b6ba8faefdceffce1f77ca52df",
+    "repo": "https://github.com/emacsmirror/company-lean",
+    "files": null,
+    "registry": "emacsmirror"
+  },
+  {
+    "name": "ledger-mode",
+    "rev": "b55384d9cd14aa0ba3eb100660f929cfa6674558",
+    "repo": "https://github.com/ledger/ledger-mode",
+    "files": [
+      "ledger-*.el",
+      "doc/*.texi"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-ledger",
+    "rev": "7a9f9f5d39c42fffdba8004f8982642351f2b233",
+    "repo": "https://github.com/atheriel/evil-ledger",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-ledger",
+    "rev": "628e25ba66604946085571652a94a54f4d1ad96f",
+    "repo": "https://github.com/purcell/flycheck-ledger",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "lua-mode",
+    "rev": "5a9bee8d5fc978dc64fcb677167417010321ba65",
+    "repo": "https://github.com/immerrr/lua-mode",
+    "files": [
+      ":defaults",
+      [
+        ":exclude",
+        "init-tryout.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "moonscript",
+    "rev": "56f90471e2ced2b0a177aed4d8c2f854797e9cc7",
+    "repo": "https://github.com/k2052/moonscript-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-moonscript",
+    "rev": "fcb99e5efcf31db05f236f02eaa575986a57172d",
+    "repo": "https://github.com/hlissner/emacs-flycheck-moonscript",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "fennel-mode",
+    "rev": "5664357349462d0564c0bb55cb289a6722f0ecbc",
+    "repo": "https://github.com/emacsmirror/fennel-mode",
+    "files": null,
+    "registry": "emacsmirror"
+  },
+  {
+    "name": "company-lua",
+    "rev": "29f6819de4d691e5fd0b62893a9f4fbc1c6fcb52",
+    "repo": "https://github.com/ptrv/company-lua",
+    "files": [
+      ":defaults",
+      "lua"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "markdown-mode",
+    "rev": "1f709778ac7990f4a07fdf11fe37bc6541810b29",
+    "repo": "https://github.com/jrblevin/markdown-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "markdown-toc",
+    "rev": "3d724e518a897343b5ede0b976d6fb46c46bcc01",
+    "repo": "https://github.com/ardumont/markdown-toc",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "edit-indirect",
+    "rev": "f80f63822ffae78de38dbe72cacaeb1aaa96c732",
+    "repo": "https://github.com/Fanael/edit-indirect",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "grip-mode",
+    "rev": "6d6ddbe0af39c82a633add8499488ad8dc9e1daa",
+    "repo": "https://github.com/seagle0128/grip-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-markdown",
+    "rev": "8e6cc68af83914b2fa9fd3a3b8472573dbcef477",
+    "repo": "https://github.com/Somelauw/evil-markdown",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "nim-mode",
+    "rev": "744e076f0bea1c5ddc49f92397d9aa98ffa7eff8",
+    "repo": "https://github.com/nim-lang/nim-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-nim",
+    "rev": "ddfade51001571c2399f78bcc509e0aa8eb752a4",
+    "repo": "https://github.com/ALSchwalm/flycheck-nim",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "nix-mode",
+    "rev": "20ee8d88900b169831d6b0783bd82d2625e940c7",
+    "repo": "https://github.com/NixOS/nix-mode",
+    "files": [
+      ":defaults",
+      [
+        ":exclude",
+        "nix-company.el",
+        "nix-mode-mmm.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "nix-update",
+    "rev": "fc6c39c2da3fcfa62f4796816c084a6389c8b6e7",
+    "repo": "https://github.com/jwiegley/nix-update-el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "company-nixos-options",
+    "rev": "053a2d5110ce05b7f99bcc2ac4804b70cbe87916",
+    "repo": "https://github.com/nix-community/nix-emacs",
+    "files": [
+      "company-nixos-options.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-nixos-options",
+    "rev": "053a2d5110ce05b7f99bcc2ac4804b70cbe87916",
+    "repo": "https://github.com/nix-community/nix-emacs",
+    "files": [
+      "helm-nixos-options.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "tuareg",
+    "rev": "ad8a688b7e2aeeafc320a845f86cdd9aa7c971ce",
+    "repo": "https://github.com/ocaml/tuareg",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "merlin",
+    "rev": "be753d9412387aedcf32aba88a1be9bcd33d97ba",
+    "repo": "https://github.com/ocaml/merlin",
+    "files": [
+      "emacs/*.el",
+      [
+        ":exclude",
+        "emacs/merlin-ac.el",
+        "emacs/merlin-company.el",
+        "emacs/merlin-iedit.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "merlin-eldoc",
+    "rev": "db7fab1eddfe34781b7e79694f8923b285698032",
+    "repo": "https://github.com/Khady/merlin-eldoc",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "merlin-company",
+    "rev": "be753d9412387aedcf32aba88a1be9bcd33d97ba",
+    "repo": "https://github.com/ocaml/merlin",
+    "files": [
+      "emacs/merlin-company.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-ocaml",
+    "rev": "77f8ddbd9bfc3a11957ac7ec7e45d5fa9179b192",
+    "repo": "https://github.com/flycheck/flycheck-ocaml",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ocp-indent",
+    "rev": "7c4d434132cebc15a8213c8be9e7323692eb0a2b",
+    "repo": "https://github.com/OCamlPro/ocp-indent",
+    "files": [
+      "tools/ocp-indent.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "utop",
+    "rev": "bbd9a6ed45c8de8d50adcd5d4d845bdba212db63",
+    "repo": "https://github.com/diml/utop",
+    "files": [
+      "src/top/utop.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "ocamlformat",
+    "rev": "9cbd8150c28f70ba6315c347a833a4ac8c85c481",
+    "repo": "https://github.com/ocaml-ppx/ocamlformat",
+    "files": [
+      "emacs/*.el"
+    ],
+    "registry": null
+  },
+  {
+    "name": "dune",
+    "rev": "3df932f7f91ea68c3fee789f133b4aa8f9bea807",
+    "repo": "https://github.com/ocaml/dune",
+    "files": [
+      "editor-integration/emacs/*.el"
+    ],
+    "registry": null
+  },
+  {
+    "name": "org",
+    "rev": "00adad9357b9123a7b11ecf12c148a5196debcb7",
+    "repo": "https://github.com/emacs-straight/org-mode",
+    "files": [
+      ":defaults",
+      "etc"
+    ],
+    "registry": null
+  },
+  {
+    "name": "org-contrib",
+    "rev": "39e2abc5629c1be6186bb6489ec4f76524edf82a",
+    "repo": "https://github.com/emacsmirror/org-contrib",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "htmlize",
+    "rev": "dd27bc3f26efd728f2b1f01f9e4ac4f61f2ffbf9",
+    "repo": "https://github.com/emacsorphanage/htmlize",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "org-yt",
+    "rev": "40cc1ac76d741055cbefa13860d9f070a7ade001",
+    "repo": "https://github.com/TobiasZawada/org-yt",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "ox-clip",
+    "rev": "ff117cf3c619eef12eccc0ccbfa3f11adb73ea68",
+    "repo": "https://github.com/jkitchin/ox-clip",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "toc-org",
+    "rev": "bf2e4b358efbd860ecafe6e74776de0885d9d100",
+    "repo": "https://github.com/snosov1/toc-org",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "org-cliplink",
+    "rev": "13e0940b65d22bec34e2de4bc8cba1412a7abfbc",
+    "repo": "https://github.com/rexim/org-cliplink",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-org",
+    "rev": "a9706da260c45b98601bcd72b1d2c0a24a017700",
+    "repo": "https://github.com/hlissner/evil-org-mode",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "org-pdftools",
+    "rev": "967f48fb5038bba32915ee9da8dc4e8b10ba3376",
+    "repo": "https://github.com/fuxialexander/org-pdftools",
+    "files": [
+      "org-pdftools.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "orgit",
+    "rev": "b33b916915db5f91d2c9da4cb1a2457ccbb09332",
+    "repo": "https://github.com/magit/orgit",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "orgit-forge",
+    "rev": "8baf1dee795f026d4555687022487fab89c9bcdf",
+    "repo": "https://github.com/magit/orgit-forge",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "org-brain",
+    "rev": "46ca9f766322cff31279ecdf02251ff24a0e9431",
+    "repo": "https://github.com/Kungsgeten/org-brain",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "org-download",
+    "rev": "947ca223643d28e189480e607df68449c15786cb",
+    "repo": "https://github.com/abo-abo/org-download",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "gnuplot",
+    "rev": "7138b139d2dca9683f1a81325c643b2744aa1ea3",
+    "repo": "https://github.com/emacs-gnuplot/gnuplot",
+    "files": [
+      "gnuplot.el",
+      "gnuplot-gui.el",
+      "gnuplot-context.el",
+      "gnuplot-eldoc.el",
+      "gnuplot.texi"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "gnuplot-mode",
+    "rev": "601f6392986f0cba332c87678d31ae0d0a496ce7",
+    "repo": "https://github.com/mkmcc/gnuplot-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ob-ipython",
+    "rev": "7147455230841744fb5b95dcbe03320313a77124",
+    "repo": "https://github.com/gregsexton/ob-ipython",
+    "files": [
+      ":defaults",
+      "*.py"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "jupyter",
+    "rev": "7d20c0aee2f9c896215f35232905b23532ef04c5",
+    "repo": "https://github.com/emacs-jupyter/jupyter",
+    "files": [
+      ":defaults",
+      "Makefile",
+      "widget.html",
+      "js"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "org-journal",
+    "rev": "839a2e19865a03bec30ef32431f981f33880a754",
+    "repo": "https://github.com/bastibe/org-journal",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "org-noter",
+    "rev": "9ead81d42dd4dd5074782d239b2efddf9b8b7b3d",
+    "repo": "https://github.com/org-noter/org-noter",
+    "files": [
+      "*.el",
+      "modules",
+      [
+        ":exclude",
+        "*-test-utils.el",
+        "*-devel.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "org-pomodoro",
+    "rev": "3f5bcfb80d61556d35fc29e5ddb09750df962cc6",
+    "repo": "https://github.com/marcinkoziej/org-pomodoro",
+    "files": [
+      ":defaults",
+      "resources"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "org-appear",
+    "rev": "60ba267c5da336e75e603f8c7ab3f44e6f4e4dac",
+    "repo": "https://github.com/awth13/org-appear",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "org-superstar",
+    "rev": "03be6c0a3081c46a59b108deb8479ee24a6d86c0",
+    "repo": "https://github.com/integral-dw/org-superstar-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "org-fancy-priorities",
+    "rev": "7f677c6c14ecf05eab8e0efbfe7f1b00ae68eb1d",
+    "repo": "https://github.com/harrybournis/org-fancy-priorities",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "centered-window",
+    "rev": "80965f6c6afe8d918481433984b493de72af5399",
+    "repo": "https://github.com/anler/centered-window-mode",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "org-tree-slide",
+    "rev": "3faa042393ebfe5699a3bffce775f039d7416ceb",
+    "repo": "https://github.com/takaxp/org-tree-slide",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "org-re-reveal",
+    "rev": "6f78a0a2287e7eecd4d22aebdb597ebadcc3eab3",
+    "repo": "https://gitlab.com/oer/org-re-reveal",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "revealjs",
+    "rev": "e219184f37a71c406e41d55ac3212eb79797f0aa",
+    "repo": "https://github.com/hakimel/reveal.js",
+    "files": [
+      "css",
+      "dist",
+      "js",
+      "plugin"
+    ],
+    "registry": null
+  },
+  {
+    "name": "org-roam",
+    "rev": "946a879a4a18756a0508afba1e0b0fe070c6a8b4",
+    "repo": "https://github.com/org-roam/org-roam-v1",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "ob-async",
+    "rev": "9aac486073f5c356ada20e716571be33a350a982",
+    "repo": "https://github.com/astahlman/ob-async",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ob-crystal",
+    "rev": "d84c1adee4b269cdba06a97caedb8071561a09af",
+    "repo": "https://github.com/brantou/ob-crystal",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ob-elixir",
+    "rev": "8990a8178b2f7bd93504a9ab136622aab6e82e32",
+    "repo": "https://github.com/zweifisch/ob-elixir",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ob-fsharp",
+    "rev": "ca3d4568da6c82ff32a8d289743b059d9f909c67",
+    "repo": "https://github.com/elken/ob-fsharp",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "ob-go",
+    "rev": "2067ed55f4c1d33a43cb3f6948609d240a8915f5",
+    "repo": "https://github.com/pope/ob-go",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ob-graphql",
+    "rev": "7c35419f9eec5dc44967cbcfa13c7135b9a96bfc",
+    "repo": "https://github.com/jdormit/ob-graphql",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ob-hy",
+    "rev": "a42ecaf440adc03e279afe43ee5ef6093ddd542a",
+    "repo": "https://github.com/brantou/ob-hy",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ob-nim",
+    "rev": "6fd060a3ecd38be37e4ec2261cd65760a3c35a91",
+    "repo": "https://github.com/Lompik/ob-nim",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ob-racket",
+    "rev": "d8fd51bddb019b0eb68755255f88fc800cfe03cb",
+    "repo": "https://github.com/DEADB17/ob-racket",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "ob-restclient",
+    "rev": "3ac834b02b8276aae1b760312612c3b940598f90",
+    "repo": "https://github.com/alf/ob-restclient.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ob-ammonite",
+    "rev": "39937dff395e70aff76a4224fa49cf2ec6c57cca",
+    "repo": "https://github.com/emacsmirror/ob-ammonite",
+    "files": null,
+    "registry": "emacsmirror"
+  },
+  {
+    "name": "ox-pandoc",
+    "rev": "f8eac5e5692fc44a4724ada43191e7c28a1ccf30",
+    "repo": "https://github.com/emacsorphanage/ox-pandoc",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ox-hugo",
+    "rev": "97ff24fe0b8d29c503b88eea69235b02ae71beb0",
+    "repo": "https://github.com/kaushalmodi/ox-hugo",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "ox-rst",
+    "rev": "99fa790da55b57a3f2e9aa187493ba434a64250e",
+    "repo": "https://github.com/msnoigrs/ox-rst",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "psysh",
+    "rev": "21250984ad8137aa3440ac12e52475ef03f19fcb",
+    "repo": "https://github.com/emacs-php/psysh.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "php-extras",
+    "rev": "d410c5af663c30c01d461ac476d1cbfbacb49367",
+    "repo": "https://github.com/arnested/php-extras",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "php-mode",
+    "rev": "5f26bec865ee159dc30d3922f17bc42adfcfed50",
+    "repo": "https://github.com/emacs-php/php-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "php-refactor-mode",
+    "rev": "7a794b0618df2882b1bd586fdd698dba0bc5130d",
+    "repo": "https://github.com/keelerm84/php-refactor-mode.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "phpunit",
+    "rev": "fe6bc91c3bd8b329c6d26ad883a025f06b5121ee",
+    "repo": "https://github.com/nlamirault/phpunit.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "composer",
+    "rev": "7c7f89df226cac69664d7eca5e913b544dc475c5",
+    "repo": "https://github.com/emacs-php/composer.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "hack-mode",
+    "rev": "a522f61c088ee2a13ab17f289a3131329e59badf",
+    "repo": "https://github.com/hhvm/hack-mode",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "phpactor",
+    "rev": "34195f1533209e2ffd0f898a69c7db2bffd1eabe",
+    "repo": "https://github.com/emacs-php/phpactor.el",
+    "files": [
+      "phpactor.el",
+      "composer.json",
+      "composer.lock"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "company-phpactor",
+    "rev": "34195f1533209e2ffd0f898a69c7db2bffd1eabe",
+    "repo": "https://github.com/emacs-php/phpactor.el",
+    "files": [
+      "company-phpactor.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "php-cs-fixer",
+    "rev": "7e12a1af5d65cd8a801eeb5564c6268a4e190c0c",
+    "repo": "https://github.com/pivaldi/php-cs-fixer",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "async",
+    "rev": "c78bab7506a70a735d2c3deab13fa87bf44a83d3",
+    "repo": "https://github.com/jwiegley/emacs-async",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "plantuml-mode",
+    "rev": "ea45a13707abd2a70df183f1aec6447197fc9ccc",
+    "repo": "https://github.com/skuro/plantuml-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-plantuml",
+    "rev": "183be89e1dbba0b38237dd198dff600e0790309d",
+    "repo": "https://github.com/alexmurray/flycheck-plantuml",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "psc-ide",
+    "rev": "ce97d719458ea099b40c02f05b6609601c727e66",
+    "repo": "https://github.com/purescript-emacs/psc-ide-emacs",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "purescript-mode",
+    "rev": "0acd1af446424ba855153161fe07a20f67dc0a89",
+    "repo": "https://github.com/purescript-emacs/purescript-mode",
+    "files": [
+      ":defaults",
+      "NEWS",
+      "snippets"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "psci",
+    "rev": "95fb5d14033add8fe9c8c6b4379758beb88af1d0",
+    "repo": "https://github.com/purescript-emacs/emacs-psci",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "pip-requirements",
+    "rev": "216cd1690f80cc965d4ae47b8753fc185f778ff6",
+    "repo": "https://github.com/Wilfred/pip-requirements.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "cython-mode",
+    "rev": "8afd932c28d08428d45bba03d6b642093e4c973b",
+    "repo": "https://github.com/cython/emacs-cython-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-cython",
+    "rev": "ecc4454d35ab5317ab66a04406f36f0c1dbc0b76",
+    "repo": "https://github.com/lbolla/emacs-flycheck-cython",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "lsp-pyright",
+    "rev": "c745228f39fdb35372b29b909f25fa6c98dc7c88",
+    "repo": "https://github.com/emacs-lsp/lsp-pyright",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "lsp-python-ms",
+    "rev": "f8e7c4bcaefbc3fd96e1ca53d17589be0403b828",
+    "repo": "https://github.com/emacs-lsp/lsp-python-ms",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "anaconda-mode",
+    "rev": "160e4e7185881233d96da6722332bd6d038187a9",
+    "repo": "https://github.com/pythonic-emacs/anaconda-mode",
+    "files": [
+      ":defaults",
+      "anaconda-mode.py"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "company-anaconda",
+    "rev": "da1566db41a68809ef7f91ebf2de28118067c89b",
+    "repo": "https://github.com/pythonic-emacs/company-anaconda",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "pipenv",
+    "rev": "3af159749824c03f59176aff7f66ddd6a5785a10",
+    "repo": "https://github.com/pwalsh/pipenv.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "pyvenv",
+    "rev": "31ea715f2164dd611e7fc77b26390ef3ca93509b",
+    "repo": "https://github.com/jorgenschaefer/pyvenv",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "pyenv-mode",
+    "rev": "b818901b8eac0e260ced66a6a5acabdbf6f5ba99",
+    "repo": "https://github.com/pythonic-emacs/pyenv-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "conda",
+    "rev": "a65ed0084876366fd1b238bb2b8b36ee75ac98d8",
+    "repo": "https://github.com/necaris/conda.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "poetry",
+    "rev": "5b9ef569d629d79820e73b5380e54e443ba90616",
+    "repo": "https://github.com/cybniv/poetry.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "nose",
+    "rev": "f8528297519eba911696c4e68fa88892de9a7b72",
+    "repo": "https://github.com/emacsmirror/nose",
+    "files": null,
+    "registry": "emacsmirror"
+  },
+  {
+    "name": "python-pytest",
+    "rev": "9bf8db38bf18feb0484931877210cecfaa96bfc6",
+    "repo": "https://github.com/wbolster/emacs-python-pytest",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "pyimport",
+    "rev": "a6f63cf7ed93f0c0f7c207e6595813966f8852b9",
+    "repo": "https://github.com/Wilfred/pyimport",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "py-isort",
+    "rev": "e67306f459c47c53a65604e4eea88a3914596560",
+    "repo": "https://github.com/paetzke/py-isort.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "qml-mode",
+    "rev": "6c5f33ba88ae010bf201a80ee8095e20a724558c",
+    "repo": "https://github.com/coldnew/qml-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "qt-pro-mode",
+    "rev": "7a2da323de834294b413cbbb3c92f42f54913643",
+    "repo": "https://github.com/emacsorphanage/qt-pro-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "racket-mode",
+    "rev": "af9b760e7baca91e26723df6a31400cbfe6a627d",
+    "repo": "https://github.com/greghendershott/racket-mode",
+    "files": [
+      ":defaults",
+      "*.rkt",
+      [
+        "racket",
+        "racket/*"
+      ],
+      [
+        ":exclude",
+        "racket/example/*",
+        "racket/test/*"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "raku-mode",
+    "rev": "977b14a7c1295ebf2aad2f807d3f8e7c27aeb47f",
+    "repo": "https://github.com/Raku/raku-mode",
+    "files": [
+      ":defaults",
+      [
+        ":exclude",
+        "nqp-mode.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-raku",
+    "rev": "b1acccd6e9d9753022571ee96d18b8e9f3227c65",
+    "repo": "https://github.com/widefox/flycheck-raku",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "restclient",
+    "rev": "9e2cfa86529133eba6c9ef53794be182f15e4c21",
+    "repo": "https://github.com/emacsorphanage/restclient",
+    "files": [
+      "restclient.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "company-restclient",
+    "rev": "e5a3ec54edb44776738c13e13e34c85b3085277b",
+    "repo": "https://github.com/iquiw/company-restclient",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "jq-mode",
+    "rev": "071c1c29bac30351ad338136f2b625e5601365cd",
+    "repo": "https://github.com/ljos/jq-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "restclient-jq",
+    "rev": "ae79e7dd283890072da69b8f48aeec1afd0d9442",
+    "repo": "https://github.com/emacsorphanage/restclient",
+    "files": [
+      "restclient-jq.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "sphinx-mode",
+    "rev": "9d4075c106fc837006394c4c803281383f2ec6f3",
+    "repo": "https://github.com/Fuco1/sphinx-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "yard-mode",
+    "rev": "ba74a47463b0320ae152bd42a7dd7aeecd7b5748",
+    "repo": "https://github.com/pd/yard-mode.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "inf-ruby",
+    "rev": "dbf4386bac12f1733257db6105e3f1fca05ffb79",
+    "repo": "https://github.com/nonsequitur/inf-ruby",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "company-inf-ruby",
+    "rev": "fe3e4863bc971fbb81edad447efad5795ead1b17",
+    "repo": "https://github.com/company-mode/company-inf-ruby",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "rubocop",
+    "rev": "f5fd18aa810c3d3269188cbbd731ddc09006f8f5",
+    "repo": "https://github.com/rubocop/rubocop-emacs",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "robe",
+    "rev": "11207bd549a5a78e3a4d70265c3715990dcdab71",
+    "repo": "https://github.com/dgutov/robe",
+    "files": [
+      "*robe.el",
+      "lib"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "bundler",
+    "rev": "43efb6be4ed118b06d787ce7fbcffd68a31732a7",
+    "repo": "https://github.com/tobiassvn/bundler.el",
+    "files": null,
+    "registry": "el-get"
+  },
+  {
+    "name": "rake",
+    "rev": "452ea0caca33376487103c64177c295ed2960cca",
+    "repo": "https://github.com/asok/rake",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "rbenv",
+    "rev": "2ea1a5bdc1266caef1dd77700f2c8f42429b03f1",
+    "repo": "https://github.com/senny/rbenv.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "rvm",
+    "rev": "c1f2642434b0f68d9baa0687127079ecd884ba12",
+    "repo": "https://github.com/senny/rvm.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "chruby",
+    "rev": "42bc6d521f832eca8e2ba210f30d03ad5529788f",
+    "repo": "https://github.com/plexus/chruby.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "rspec-mode",
+    "rev": "4215ff1f2d1cee24a144ff08297276dc7b971c25",
+    "repo": "https://github.com/pezra/rspec-mode",
+    "files": [
+      "rspec-mode.el",
+      "snippets"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "minitest",
+    "rev": "ddd152c990a528ad09a696bfad23afa4330ea4d7",
+    "repo": "https://github.com/emacsmirror/minitest",
+    "files": [
+      ":defaults",
+      "snippets"
+    ],
+    "registry": "emacsmirror"
+  },
+  {
+    "name": "projectile-rails",
+    "rev": "772f4766b5d1159a395b93459f07d5f1f6c02f4e",
+    "repo": "https://github.com/asok/projectile-rails",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "inflections",
+    "rev": "55caa66a7cc6e0b1a76143fd40eff38416928941",
+    "repo": "https://github.com/eschulte/jump.el",
+    "files": [
+      "inflections.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "rustic",
+    "rev": "6eec9713876d698510ee3715698fd42c1571e307",
+    "repo": "https://github.com/emacs-rustic/rustic",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "racer",
+    "rev": "1e63e98626737ea9b662d4a9b1ffd6842b1c648c",
+    "repo": "https://github.com/racer-rust/emacs-racer",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "sbt-mode",
+    "rev": "9fe1e8807c22cc1dc56a6233e000969518907f4d",
+    "repo": "https://github.com/hvesalai/emacs-sbt-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "scala-mode",
+    "rev": "598cb680f321d9609295aa9b4679040cc703b602",
+    "repo": "https://github.com/hvesalai/emacs-scala-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "lsp-metals",
+    "rev": "097d6021a4ff0eae704cc3074e064c9509c5cafc",
+    "repo": "https://github.com/emacs-lsp/lsp-metals",
+    "files": [
+      ":defaults",
+      "icons"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "geiser",
+    "rev": "9507e81a075351d090fd1f4f708efd05d6470cba",
+    "repo": "https://gitlab.com/emacs-geiser/geiser",
+    "files": [
+      "elisp/*.el",
+      "doc/dir",
+      "doc/geiser.texi"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "macrostep-geiser",
+    "rev": "f6a2d5bb96ade4f23df557649af87ebd0cc45125",
+    "repo": "https://github.com/nbfalcon/macrostep-geiser",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "geiser-chez",
+    "rev": "48427d4aecc6fed751d266673f1ce2ad57ddbcfc",
+    "repo": "https://gitlab.com/emacs-geiser/chez",
+    "files": [
+      ":defaults",
+      [
+        "src",
+        "src/*"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "geiser-chibi",
+    "rev": "5a6a5a580ea45cd4974df21629a8d50cbe3d6e99",
+    "repo": "https://gitlab.com/emacs-geiser/chibi",
+    "files": [
+      ":defaults",
+      [
+        "src",
+        "src/*"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "geiser-chicken",
+    "rev": "79a9ac78f4df7c9ec1f918313c543c116dbb8b70",
+    "repo": "https://gitlab.com/emacs-geiser/chicken",
+    "files": [
+      ":defaults",
+      "src"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "geiser-gambit",
+    "rev": "381d74ca5059b44fe3d8b5daf42214019c6d1a88",
+    "repo": "https://gitlab.com/emacs-geiser/gambit",
+    "files": [
+      ":defaults",
+      [
+        "src",
+        "src/*"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "geiser-gauche",
+    "rev": "fd52cbaed9b0a0d0f10e87674b5747e5ee44ebc9",
+    "repo": "https://gitlab.com/emacs-geiser/gauche",
+    "files": [
+      ":defaults",
+      "geiser-gauche.scm"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "geiser-guile",
+    "rev": "c641fcc50b6b86ca95743122b5206cdcd475f96e",
+    "repo": "https://gitlab.com/emacs-geiser/guile",
+    "files": [
+      ":defaults",
+      [
+        "src",
+        "src/*"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-guile",
+    "rev": "e46d6e5453dd7471309fae6549445c48e6d8f340",
+    "repo": "https://github.com/flatwhatson/flycheck-guile",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "geiser-kawa",
+    "rev": "5896b19642923f74f718eb68d447560b2d26d797",
+    "repo": "https://gitlab.com/emacs-geiser/kawa",
+    "files": [
+      "elisp/*.el",
+      "pom.xml",
+      ".mvn",
+      "mvnw",
+      "mvnw.cmd",
+      "src"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "geiser-mit",
+    "rev": "4e90e9ae815e89f3540fb9644e6016c663ef5765",
+    "repo": "https://gitlab.com/emacs-geiser/mit",
+    "files": [
+      ":defaults",
+      [
+        "src",
+        "src/*"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "geiser-racket",
+    "rev": "22e56ce80389544d3872cf4beb4008fb514b2218",
+    "repo": "https://gitlab.com/emacs-geiser/racket",
+    "files": [
+      ":defaults",
+      [
+        "src",
+        "src/*",
+        "bin",
+        "bin/*"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "company-shell",
+    "rev": "a77f4de75912aa87314cde92c603b831d5050246",
+    "repo": "https://github.com/Alexander-Miller/company-shell",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "fish-mode",
+    "rev": "a7c953b1491ac3a3e00a7b560f2c9f46b3cb5c04",
+    "repo": "https://github.com/wwwjfy/emacs-fish",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "powershell",
+    "rev": "ce1f0ae0b2e41cd0934a9dfbf2ff016b1d14e9c0",
+    "repo": "https://github.com/jschaf/powershell.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "sml-mode",
+    "rev": "0338e9729bce469ad401b4af1b11fd4aeaf93242",
+    "repo": "https://elpa.gnu.org/packages/sml-mode.html",
+    "files": null,
+    "registry": "gnu-elpa-mirror"
+  },
+  {
+    "name": "company-mlton",
+    "rev": "9b09d209b4767a2af24784fb5321390ed1d445bf",
+    "repo": "https://github.com/MatthewFluet/company-mlton",
+    "files": [
+      "*.el",
+      "*.basis"
+    ],
+    "registry": null
+  },
+  {
+    "name": "solidity-mode",
+    "rev": "20fb77e089e10187b37ae1a94153017b82ed2a0a",
+    "repo": "https://github.com/ethereum/emacs-solidity",
+    "files": [
+      ":defaults",
+      [
+        ":exclude",
+        "company-solidity.el",
+        "solidity-flycheck.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "company-solidity",
+    "rev": "20fb77e089e10187b37ae1a94153017b82ed2a0a",
+    "repo": "https://github.com/ethereum/emacs-solidity",
+    "files": [
+      "company-solidity.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "solidity-flycheck",
+    "rev": "20fb77e089e10187b37ae1a94153017b82ed2a0a",
+    "repo": "https://github.com/ethereum/emacs-solidity",
+    "files": [
+      "solidity-flycheck.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "swift-mode",
+    "rev": "0d1ef0ef183398143b13fb8c76c1284df0d5e616",
+    "repo": "https://github.com/swift-emacs/swift-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "lsp-sourcekit",
+    "rev": "97ff36b228a61e69734c7180f33cc6951b1a600f",
+    "repo": "https://github.com/emacs-lsp/lsp-sourcekit",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "company-sourcekit",
+    "rev": "a1860ad4dd3a542acd2fa0dfac2a388cbdf4af0c",
+    "repo": "https://github.com/nathankot/company-sourcekit",
+    "files": [
+      "company-sourcekit.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "flycheck-swift",
+    "rev": "4c5ad401252400a78da395fd56a71e67ff8c2761",
+    "repo": "https://github.com/swift-emacs/flycheck-swift",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "terra-mode",
+    "rev": "ceef8cae5bddc70ee3d5d4d00aa323e3cd6a11be",
+    "repo": "https://github.com/StanfordLegion/terra-mode",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "emmet-mode",
+    "rev": "6b2e554f7fd27f732810f4b14ea01e3c54b7b3da",
+    "repo": "https://github.com/smihica/emmet-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "haml-mode",
+    "rev": "bf5b6c11b1206759d2b28af48765e04882dd1fc4",
+    "repo": "https://github.com/nex3/haml-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "pug-mode",
+    "rev": "73f8c2f95eba695f701df20c8436f49abadebdc1",
+    "repo": "https://github.com/hlissner/emacs-pug-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "slim-mode",
+    "rev": "3636d18ab1c8b316eea71c4732eb44743e2ded87",
+    "repo": "https://github.com/slim-template/emacs-slim",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "web-mode",
+    "rev": "efa853e5cfff8e0bcacbda9d1c6696b33da91b03",
+    "repo": "https://github.com/fxbois/web-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "company-web",
+    "rev": "863fb84b81ed283474e50330cd8d27b1ca0d74f1",
+    "repo": "https://github.com/osv/company-web",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "sass-mode",
+    "rev": "247a0d4b509f10b28e4687cd8763492bca03599b",
+    "repo": "https://github.com/nex3/sass-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "stylus-mode",
+    "rev": "1ad7c51f3c6a6ae64550d9510c5e4e8470014375",
+    "repo": "https://github.com/brianc/jade-mode",
+    "files": [
+      "stylus-mode.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "sws-mode",
+    "rev": "1ad7c51f3c6a6ae64550d9510c5e4e8470014375",
+    "repo": "https://github.com/brianc/jade-mode",
+    "files": [
+      "sws-mode.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "rainbow-mode",
+    "rev": "949166cc0146bc9fabf74ce70c1c4a097f4cffd4",
+    "repo": "https://elpa.gnu.org/packages/rainbow-mode.html",
+    "files": null,
+    "registry": "gnu-elpa-mirror"
+  },
+  {
+    "name": "counsel-css",
+    "rev": "8e9c0515fc952452eee786d8ebb43d48ea86c9f8",
+    "repo": "https://github.com/hlissner/emacs-counsel-css",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-css-scss",
+    "rev": "48b996f73af1fef8d6e88a1c545d98f8c50b0cf3",
+    "repo": "https://github.com/emacsorphanage/helm-css-scss",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "yaml-mode",
+    "rev": "535273d5a1eb76999d20afbcf4d9f056d8ffd2da",
+    "repo": "https://github.com/yoshiki/yaml-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "zig-mode",
+    "rev": "aa20d630b8c413dab8d6bd120ec3ed5db5c9da70",
+    "repo": "https://github.com/emacsmirror/zig-mode",
+    "files": null,
+    "registry": "emacsmirror"
+  },
+  {
+    "name": "osx-trash",
+    "rev": "af74a2055a15bf4182d8196600f7decd66eec634",
+    "repo": "https://github.com/emacsorphanage/osx-trash",
+    "files": [
+      ":defaults",
+      "*.AppleScript"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "ns-auto-titlebar",
+    "rev": "60273e764bf8d95abc40dd2fdc23af87ea9ee33b",
+    "repo": "https://github.com/purcell/ns-auto-titlebar",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "clipetty",
+    "rev": "01b39044b9b65fa4ea7d3166f8b1ffab6f740362",
+    "repo": "https://github.com/spudlyo/clipetty",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "xclip",
+    "rev": "4772beb5579e13910c89c482a2e41271253c646b",
+    "repo": "https://elpa.gnu.org/packages/xclip.html",
+    "files": null,
+    "registry": "gnu-elpa-mirror"
+  },
+  {
+    "name": "evil-terminal-cursor-changer",
+    "rev": "12ea9c0438c67e560b3866dc78b5c7d1d93f8cc5",
+    "repo": "https://github.com/7696122/evil-terminal-cursor-changer",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "eshell-up",
+    "rev": "ff84e6069b98f2ed00857a0f78bff19d96e4955c",
+    "repo": "https://github.com/peterwvj/eshell-up",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "eshell-z",
+    "rev": "337cb241e17bd472bd3677ff166a0800f684213c",
+    "repo": "https://github.com/xuchunyang/eshell-z",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "shrink-path",
+    "rev": "c14882c8599aec79a6e8ef2d06454254bb3e1e41",
+    "repo": "https://gitlab.com/bennya/shrink-path.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "esh-help",
+    "rev": "417673ed18a983930a66a6692dbfb288a995cb80",
+    "repo": "https://github.com/tom-tan/esh-help",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "eshell-did-you-mean",
+    "rev": "80cd8c4b186a2fb29621cf634bcf2bcd914f1e3d",
+    "repo": "https://github.com/xuchunyang/eshell-did-you-mean",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "eshell-syntax-highlighting",
+    "rev": "8e3a685fc6d97af79e1046e5b24385786d8e92f6",
+    "repo": "https://github.com/akreisher/eshell-syntax-highlighting",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "fish-completion",
+    "rev": "10384881817b5ae38cf6197a077a663420090d2c",
+    "repo": "https://github.com/LemonBreezes/emacs-fish-completion",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "bash-completion",
+    "rev": "c5eaeed156ab906190c662d491269230967104b1",
+    "repo": "https://github.com/szermatt/emacs-bash-completion",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "multi-term",
+    "rev": "017c77c550115936860e2ea71b88e585371475d5",
+    "repo": "https://github.com/manateelazycat/multi-term",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "vterm",
+    "rev": "a940dd2ee8a82684860e320c0f6d5e15d31d916f",
+    "repo": "https://github.com/akermu/emacs-libvterm",
+    "files": [
+      "CMakeLists.txt",
+      "elisp.c",
+      "elisp.h",
+      "emacs-module.h",
+      "etc",
+      "utf8.c",
+      "utf8.h",
+      "vterm.el",
+      "vterm-module.c",
+      "vterm-module.h"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "ansible",
+    "rev": "d89ac0ee57742cca0f0e0a3453d9dcc521575690",
+    "repo": "https://gitlab.com/emacs-ansible/emacs-ansible",
+    "files": [
+      ":defaults",
+      "snippets",
+      "dict"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "ansible-doc",
+    "rev": "86083a7bb2ed0468ca64e52076b06441a2f8e9e0",
+    "repo": "https://github.com/emacsorphanage/ansible-doc",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "jinja2-mode",
+    "rev": "03e5430a7efe1d163a16beaf3c82c5fd2c2caee1",
+    "repo": "https://github.com/paradoxxxzero/jinja2-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "company-ansible",
+    "rev": "79dd421b161efa49fbdffad57fa40edb41f484a3",
+    "repo": "https://github.com/krzysztof-magosa/company-ansible",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "bibtex-completion",
+    "rev": "ce8c17690ddad73d01531084b282f221f8eb6669",
+    "repo": "https://github.com/tmalsburg/helm-bibtex",
+    "files": [
+      "bibtex-completion.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "ivy-bibtex",
+    "rev": "ce8c17690ddad73d01531084b282f221f8eb6669",
+    "repo": "https://github.com/tmalsburg/helm-bibtex",
+    "files": [
+      "ivy-bibtex.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-bibtex",
+    "rev": "ce8c17690ddad73d01531084b282f221f8eb6669",
+    "repo": "https://github.com/tmalsburg/helm-bibtex",
+    "files": [
+      "helm-bibtex.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "citar",
+    "rev": "146f2cb5a31d4968ec17f39f189e4ea131ccaf56",
+    "repo": "https://github.com/emacs-citar/citar",
+    "files": [
+      ":defaults",
+      [
+        ":exclude",
+        "citar-embark.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "citar-embark",
+    "rev": "146f2cb5a31d4968ec17f39f189e4ea131ccaf56",
+    "repo": "https://github.com/emacs-citar/citar",
+    "files": [
+      "citar-embark.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "parsebib",
+    "rev": "175a1bdac1eabc7415116c8722795a1155e2d2c9",
+    "repo": "https://github.com/joostkremers/parsebib",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "citeproc",
+    "rev": "406bd9964f1ce531fc45beddcf9ccc44d3456129",
+    "repo": "https://github.com/andras-simonyi/citeproc-el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "realgud",
+    "rev": "3c88611c4ed59069093187c2a039b8d05cbe53e8",
+    "repo": "https://github.com/realgud/realgud",
+    "files": [
+      "realgud.el",
+      "realgud/.nosearch",
+      "realgud-recursive-autoloads.el",
+      [
+        "realgud/common",
+        "realgud/common/*.el"
+      ],
+      [
+        "realgud/common/buffer",
+        "realgud/common/buffer/*.el"
+      ],
+      [
+        "realgud/debugger/bashdb",
+        "realgud/debugger/bashdb/*.el"
+      ],
+      [
+        "realgud/debugger/gdb",
+        "realgud/debugger/gdb/*.el"
+      ],
+      [
+        "realgud/debugger/gub",
+        "realgud/debugger/gub/*.el"
+      ],
+      [
+        "realgud/debugger/ipdb",
+        "realgud/debugger/ipdb/*.el"
+      ],
+      [
+        "realgud/debugger/jdb",
+        "realgud/debugger/jdb/*.el"
+      ],
+      [
+        "realgud/debugger/kshdb",
+        "realgud/debugger/kshdb/*.el"
+      ],
+      [
+        "realgud/debugger/nodejs",
+        "realgud/debugger/nodejs/*.el"
+      ],
+      [
+        "realgud/debugger/pdb",
+        "realgud/debugger/pdb/*.el"
+      ],
+      [
+        "realgud/debugger/perldb",
+        "realgud/debugger/perldb/*.el"
+      ],
+      [
+        "realgud/debugger/rdebug",
+        "realgud/debugger/rdebug/*.el"
+      ],
+      [
+        "realgud/debugger/remake",
+        "realgud/debugger/remake/*.el"
+      ],
+      [
+        "realgud/debugger/trepan",
+        "realgud/debugger/trepan/*.el"
+      ],
+      [
+        "realgud/debugger/trepan.pl",
+        "realgud/debugger/trepan.pl/*.el"
+      ],
+      [
+        "realgud/debugger/trepan2",
+        "realgud/debugger/trepan2/*.el"
+      ],
+      [
+        "realgud/debugger/trepan3k",
+        "realgud/debugger/trepan3k/*.el"
+      ],
+      [
+        "realgud/debugger/trepanjs",
+        "realgud/debugger/trepanjs/*.el"
+      ],
+      [
+        "realgud/debugger/zshdb",
+        "realgud/debugger/zshdb/*.el"
+      ],
+      [
+        "realgud/lang",
+        "realgud/lang/*.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "realgud-trepan-ni",
+    "rev": "0ec088ea343835e24ae73da09bea96bfb02a3130",
+    "repo": "https://github.com/realgud/realgud-trepan-ni",
+    "files": [
+      ":defaults",
+      [
+        "trepan-ni",
+        "trepan-ni/*.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "dap-mode",
+    "rev": "50c2a99059da03ac5274d6794ea4758ddf253dc1",
+    "repo": "https://github.com/emacs-lsp/dap-mode",
+    "files": [
+      ":defaults",
+      "icons"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "envrc",
+    "rev": "7f36664fc6d97a7ca77c6c3e0c6577b72fa0b70d",
+    "repo": "https://github.com/purcell/envrc",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "docker",
+    "rev": "44f0bbec9b3deb027d17f4c10d8ec4106ed89dfb",
+    "repo": "https://github.com/Silex/docker.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "docker-tramp",
+    "rev": "930d7b46c180d8a13240a028c1b40af84f2a3219",
+    "repo": "https://github.com/emacs-pe/docker-tramp.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "dockerfile-mode",
+    "rev": "b63a3d12b7dea0cb9efc7f78d7ad5672ceab2a3f",
+    "repo": "https://github.com/spotify/dockerfile-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "editorconfig",
+    "rev": "1f6f16c24fd0030322d59c2853067a6dccc9e736",
+    "repo": "https://github.com/editorconfig/editorconfig-emacs",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ein",
+    "rev": "7b9b14435c1dee85dd1eb5faf5d58edfa5ca5cbb",
+    "repo": "https://github.com/millejoh/emacs-ipython-notebook",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "quickrun",
+    "rev": "314beae43cac2e4943e9ed4850e8e147bc3d2fac",
+    "repo": "https://github.com/emacsorphanage/quickrun",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "eros",
+    "rev": "dd8910279226259e100dab798b073a52f9b4233a",
+    "repo": "https://github.com/xiongtx/eros",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "gist",
+    "rev": "314fe6ab80fae35b95f0734eceb82f72813b6f41",
+    "repo": "https://github.com/defunkt/gist.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "dumb-jump",
+    "rev": "1dd583011f4025b1b8c75fd785691851b6c5dfa3",
+    "repo": "https://github.com/jacktasia/dumb-jump",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ivy-xref",
+    "rev": "a82e8e117d2dd62c28b6a3e3d6e4cfb11c0bda38",
+    "repo": "https://github.com/alexmurray/ivy-xref",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-xref",
+    "rev": "ea0e4ed8a9baf236e4085cbc7178241f109a53fa",
+    "repo": "https://github.com/brotzeit/helm-xref",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "request",
+    "rev": "38ed1d2e64138eb16a9d8ed2987cff2e01b4a93b",
+    "repo": "https://github.com/tkf/emacs-request",
+    "files": [
+      "request.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "dash-docs",
+    "rev": "29848b6b347ac520f7646c200ed2ec36cea3feda",
+    "repo": "https://github.com/dash-docs-el/dash-docs",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-dash",
+    "rev": "7f853bd34da666f0e9a883011c80f451b06f6c59",
+    "repo": "https://github.com/dash-docs-el/helm-dash",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "counsel-dash",
+    "rev": "370d5f6f14b5294d0eb717f7b2a6a8e93df1ed24",
+    "repo": "https://github.com/dash-docs-el/counsel-dash",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "osx-dictionary",
+    "rev": "1a4479d9f44ef1e6e5f7643c172c32f6fe6cce21",
+    "repo": "https://github.com/xuchunyang/osx-dictionary.el",
+    "files": [
+      "osx-dictionary.el",
+      "osx-dictionary.m"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "define-word",
+    "rev": "31a8c67405afa99d0e25e7c86a4ee7ef84a808fe",
+    "repo": "https://github.com/abo-abo/define-word",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "powerthesaurus",
+    "rev": "88bc5229cba1604c8f74db0a1456d99259d538cc",
+    "repo": "https://github.com/SavchenkoValeriy/emacs-powerthesaurus",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "wordnut",
+    "rev": "feac531404041855312c1a046bde7ea18c674915",
+    "repo": "https://github.com/gromnitsky/wordnut",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "synosaurus",
+    "rev": "14d34fc92a77c3a916b4d58400424c44ae99cd81",
+    "repo": "https://github.com/hpdeifel/synosaurus",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "eglot",
+    "rev": "bd970be047aba4513c2970b9ff2d842f0472cb0e",
+    "repo": "https://github.com/joaotavora/eglot",
+    "files": null,
+    "registry": "gnu-elpa-mirror"
+  },
+  {
+    "name": "consult-eglot",
+    "rev": "0da8801dd8435160ce1f62ad8066bd52e38f5cbd",
+    "repo": "https://github.com/mohkale/consult-eglot",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "lsp-mode",
+    "rev": "3fa645c0397b8f438f2db2dd288b899ba330d410",
+    "repo": "https://github.com/emacs-lsp/lsp-mode",
+    "files": [
+      ":defaults",
+      "clients/*.*"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "lsp-ui",
+    "rev": "0a6368d38dc32e52abcbd52b63d1e557e42c66e6",
+    "repo": "https://github.com/emacs-lsp/lsp-ui",
+    "files": [
+      ":defaults",
+      "lsp-ui-doc.html",
+      "resources"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "lsp-ivy",
+    "rev": "3e87441a625d65ced5a208a0b0442d573596ffa3",
+    "repo": "https://github.com/emacs-lsp/lsp-ivy",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-lsp",
+    "rev": "c2c6974dadfac459b1a69a1217441283874cea92",
+    "repo": "https://github.com/emacs-lsp/helm-lsp",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "consult-lsp",
+    "rev": "19606a03cf854e1b0930c4526ed92c4560dccdc2",
+    "repo": "https://github.com/gagbo/consult-lsp",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "magit",
+    "rev": "c1fb53d3de6390961ccd8dfb1cc135383508d0fc",
+    "repo": "https://github.com/magit/magit",
+    "files": [
+      "lisp/magit*.el",
+      "lisp/git-*.el",
+      "docs/magit.texi",
+      "docs/AUTHORS.md",
+      "LICENSE",
+      ".dir-locals.el",
+      [
+        "git-hooks",
+        "git-hooks/*"
+      ],
+      [
+        ":exclude",
+        "lisp/magit-section.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "forge",
+    "rev": "36208c43bf41782cfe81fccc904f8adbe57818e1",
+    "repo": "https://github.com/magit/forge",
+    "files": [
+      "lisp/*.el",
+      "docs/*.texi",
+      ".dir-locals.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "magit-gitflow",
+    "rev": "cc41b561ec6eea947fe9a176349fb4f771ed865b",
+    "repo": "https://github.com/jtatarik/magit-gitflow",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "magit-todos",
+    "rev": "67fd80c2f10aec4d5b2a24b5d3d53c08cc1f05dc",
+    "repo": "https://github.com/alphapapa/magit-todos",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "code-review",
+    "rev": "d38fbe59304ed31c759ce733cda16f69a8ef2d8c",
+    "repo": "https://github.com/wandersoncferreira/code-review",
+    "files": [
+      "graphql",
+      "code-review*.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "makefile-executor",
+    "rev": "d0a34c355fb80a8616ae7ed5eebbda8507aa14ac",
+    "repo": "https://github.com/Olivia5k/makefile-executor.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "pass",
+    "rev": "5651da53137db9adcb125b4897c2fe27eeb4368d",
+    "repo": "https://github.com/NicolasPetton/pass",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "password-store",
+    "rev": "c4d8a1d815e79ddd89a85d3e36a41d29f0475771",
+    "repo": "https://github.com/zx2c4/password-store",
+    "files": [
+      "contrib/emacs/*.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "password-store-otp",
+    "rev": "be3a00a981921ed1b2f78012944dc25eb5a0beca",
+    "repo": "https://github.com/volrath/password-store-otp.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ivy-pass",
+    "rev": "5b523de1151f2109fdd6a8114d0af12eef83d3c5",
+    "repo": "https://github.com/ecraven/ivy-pass",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-pass",
+    "rev": "4ce46f1801f2e76e53482c65aa0619d427a3fbf9",
+    "repo": "https://github.com/emacs-helm/helm-pass",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "pdf-tools",
+    "rev": "bb0b71f5bafd81d0b5647c4ec48fafa0bb6f6c21",
+    "repo": "https://github.com/vedang/pdf-tools",
+    "files": [
+      ":defaults",
+      "README",
+      [
+        "build",
+        "Makefile"
+      ],
+      [
+        "build",
+        "server"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "saveplace-pdf-view",
+    "rev": "54ed966b842501c3c092dbf57b372e37b033c578",
+    "repo": "https://github.com/nicolaisingh/saveplace-pdf-view",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "prodigy",
+    "rev": "a3be00d3b90a77118c2d7d9f5a2f26151091fa07",
+    "repo": "https://github.com/rejeep/prodigy.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "kurecolor",
+    "rev": "d17a77d9210b3e7b8141d03c04d1898bcab2b876",
+    "repo": "https://github.com/emacsfodder/kurecolor",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "taskrunner",
+    "rev": "716323aff410b4d864d137c9ebe4bbb5b8587f5e",
+    "repo": "https://github.com/emacs-taskrunner/emacs-taskrunner",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "helm-taskrunner",
+    "rev": "70ef8117aafdc01a1f06151a82cecb9a2fcf4d32",
+    "repo": "https://github.com/emacs-taskrunner/helm-taskrunner",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "ivy-taskrunner",
+    "rev": "c731ee6279f65061ef70e79d3818ea1d9678e6da",
+    "repo": "https://github.com/emacs-taskrunner/ivy-taskrunner",
+    "files": null,
+    "registry": null
+  },
+  {
+    "name": "terraform-mode",
+    "rev": "e560caaa9d9a11b0868adf6d9dcae5ebb5055730",
+    "repo": "https://github.com/hcl-emacs/terraform-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "company-terraform",
+    "rev": "8d5a16d1bbeeb18ca49a8fd57b5d8cd30c8b8dc7",
+    "repo": "https://github.com/rafalcieslak/emacs-company-terraform",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "tree-sitter",
+    "rev": "c3fe96a103a766256ba62120eb638eef8e9a9802",
+    "repo": "https://github.com/emacs-tree-sitter/elisp-tree-sitter",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "tree-sitter-langs",
+    "rev": "deb2d8674be8f777ace50e15c7c041aeddb1d0b2",
+    "repo": "https://github.com/emacs-tree-sitter/tree-sitter-langs",
+    "files": [
+      ":defaults",
+      "queries"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-textobj-tree-sitter",
+    "rev": "9dce8dab68c954ae32095328cf898eb856fc341a",
+    "repo": "https://github.com/meain/evil-textobj-tree-sitter",
+    "files": [
+      ":defaults",
+      "queries",
+      "treesit-queries"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "ssh-deploy",
+    "rev": "9311f9b4f8d25ce54fb7da9bf59d955fed366a4d",
+    "repo": "https://github.com/cjohansson/emacs-ssh-deploy",
+    "files": null,
+    "registry": "gnu-elpa-mirror"
+  },
+  {
+    "name": "deft",
+    "rev": "28be94d89bff2e1c7edef7244d7c5ba0636b1296",
+    "repo": "https://github.com/jrblevin/deft",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "doom-themes",
+    "rev": "83fd9545c2823b4b2610947802fa3a52995517b4",
+    "repo": "https://github.com/doomemacs/themes",
+    "files": [
+      ":defaults",
+      "themes/*.el",
+      "themes/*/*.el",
+      "extensions/*.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "solaire-mode",
+    "rev": "8af65fbdc50b25ed3214da949b8a484527c7cc14",
+    "repo": "https://github.com/hlissner/emacs-solaire-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "emojify",
+    "rev": "1b726412f19896abf5e4857d4c32220e33400b55",
+    "repo": "https://github.com/iqbalansari/emacs-emojify",
+    "files": [
+      ":defaults",
+      "data",
+      "images"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "hl-todo",
+    "rev": "e52285965b5ee89c18080661d4f80270143ae8dc",
+    "repo": "https://github.com/tarsius/hl-todo",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "hydra",
+    "rev": "9e9e00cb240ea1903ffd36a54956b3902c379d29",
+    "repo": "https://github.com/abo-abo/hydra",
+    "files": [
+      ":defaults",
+      [
+        ":exclude",
+        "lv.el"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "highlight-indent-guides",
+    "rev": "cf352c85cd15dd18aa096ba9d9ab9b7ab493e8f6",
+    "repo": "https://github.com/DarthFennec/highlight-indent-guides",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "minimap",
+    "rev": "ed7490652a676c0510ed57d5366c445de20a370b",
+    "repo": "https://elpa.gnu.org/packages/minimap.html",
+    "files": null,
+    "registry": "gnu-elpa-mirror"
+  },
+  {
+    "name": "doom-modeline",
+    "rev": "ce9899f00af40edb78f58b9af5c3685d67c8eed2",
+    "repo": "https://github.com/seagle0128/doom-modeline",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "anzu",
+    "rev": "5abb37455ea44fa401d5f4c1bdc58adb2448db67",
+    "repo": "https://github.com/emacsorphanage/anzu",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-anzu",
+    "rev": "d3f6ed4773b48767bd5f4708c7f083336a8a8a86",
+    "repo": "https://github.com/emacsorphanage/evil-anzu",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "nav-flash",
+    "rev": "2e31f32085757e1dfdd8ec78e9940fd1c88750de",
+    "repo": "https://github.com/rolandwalker/nav-flash",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "evil-goggles",
+    "rev": "8f20a16e74016f37ad76dc4f2230d9b00c6df3c2",
+    "repo": "https://github.com/edkolev/evil-goggles",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "volatile-highlights",
+    "rev": "9a20091f0ce7fc0a6b3e641a6a46d5f3ac4d8392",
+    "repo": "https://github.com/k-talo/volatile-highlights.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "centaur-tabs",
+    "rev": "f4cef95acbd2eb99c8db3b6cdde74a6e0a966a0a",
+    "repo": "https://github.com/ema2159/centaur-tabs",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "treemacs",
+    "rev": "b18a05b1f62074a40e6011d83cd4c92cbee040dd",
+    "repo": "https://github.com/Alexander-Miller/treemacs",
+    "files": [
+      ":defaults",
+      "Changelog.org",
+      "icons",
+      "src/elisp/treemacs*.el",
+      "src/scripts/treemacs*.py",
+      [
+        ":exclude",
+        "src/extra/*"
+      ]
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "treemacs-evil",
+    "rev": "b18a05b1f62074a40e6011d83cd4c92cbee040dd",
+    "repo": "https://github.com/Alexander-Miller/treemacs",
+    "files": [
+      "src/extra/treemacs-evil.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "treemacs-projectile",
+    "rev": "b18a05b1f62074a40e6011d83cd4c92cbee040dd",
+    "repo": "https://github.com/Alexander-Miller/treemacs",
+    "files": [
+      "src/extra/treemacs-projectile.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "treemacs-magit",
+    "rev": "b18a05b1f62074a40e6011d83cd4c92cbee040dd",
+    "repo": "https://github.com/Alexander-Miller/treemacs",
+    "files": [
+      "src/extra/treemacs-magit.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "treemacs-persp",
+    "rev": "b18a05b1f62074a40e6011d83cd4c92cbee040dd",
+    "repo": "https://github.com/Alexander-Miller/treemacs",
+    "files": [
+      "src/extra/treemacs-persp.el"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "lsp-treemacs",
+    "rev": "355e468b7fa9887c616a8bfe873d8e456303b67b",
+    "repo": "https://github.com/emacs-lsp/lsp-treemacs",
+    "files": [
+      ":defaults",
+      "icons"
+    ],
+    "registry": "melpa"
+  },
+  {
+    "name": "unicode-fonts",
+    "rev": "47f2397ade28eba621baa865fd69e4efb71407a5",
+    "repo": "https://github.com/rolandwalker/unicode-fonts",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "diff-hl",
+    "rev": "dabb7be6283488abd8d232ea8ce590d502713ed8",
+    "repo": "https://github.com/dgutov/diff-hl",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "git-gutter-fringe",
+    "rev": "648cb5b57faec55711803cdc9434e55a733c3eba",
+    "repo": "https://github.com/emacsorphanage/git-gutter-fringe",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "vi-tilde-fringe",
+    "rev": "f1597a8d54535bb1d84b442577b2024e6f910308",
+    "repo": "https://github.com/syl20bnr/vi-tilde-fringe",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "switch-window",
+    "rev": "8d9fe251d8d38b223d643df975876356ddfc1b98",
+    "repo": "https://github.com/dimitri/switch-window",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "ace-window",
+    "rev": "0577c426a9833ab107bab46c60d1885c611b2fb9",
+    "repo": "https://github.com/abo-abo/ace-window",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "winum",
+    "rev": "c5455e866e8a5f7eab6a7263e2057aff5f1118b9",
+    "repo": "https://github.com/deb0ch/emacs-winum",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "persp-mode",
+    "rev": "7a594a3d8f1c4ba9234dcd831a589e87f3f4ae86",
+    "repo": "https://github.com/Bad-ptr/persp-mode.el",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "writeroom-mode",
+    "rev": "eac1da790f316f357ed76ed67fbb790d6a4d126a",
+    "repo": "https://github.com/joostkremers/writeroom-mode",
+    "files": null,
+    "registry": "melpa"
+  },
+  {
+    "name": "mixed-pitch",
+    "rev": "519e05f74825abf04b7d2e0e38ec040d013a125a",
+    "repo": "https://gitlab.com/jabranham/mixed-pitch",
+    "files": null,
+    "registry": "melpa"
+  }
+]
