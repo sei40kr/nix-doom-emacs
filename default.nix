@@ -42,7 +42,7 @@
 , extraConfig ? ""
   /* Package set to install emacs and dependent packages from
 
-     Only used to get emacs package, if `bundledPackages` is set.
+     Used to get emacs package and apply emacsPackagesOverlay.
   */
 , emacsPackages
   /* Overlay to customize emacs (elisp) dependencies
@@ -57,10 +57,6 @@
        };
   */
 , emacsPackagesOverlay ? final: prev: { }
-  /* Use bundled revision of github.com/nix-community/emacs-overlay
-     as `emacsPackages`.
-  */
-, bundledPackages ? true
   /* Override dependency versions
 
      Handy for testing out updated dependencies without publishing
@@ -80,9 +76,9 @@
      emacsPackagesOverlay. The overlay has the highest priority.
   */
 , doomemacsPackages
-, lib, pkgs, stdenv, buildEnv, makeWrapper
-, runCommand, fetchFromGitHub, writeShellScript
-, writeShellScriptBin, writeTextDir, git }:
+, lib, pkgs, stdenv
+, runCommand, writeShellScript
+, writeShellScriptBin, writeTextDir }:
 
 assert (lib.assertMsg ((builtins.isPath doomPrivateDir)
   || (lib.isDerivation doomPrivateDir) || (lib.isStorePath doomPrivateDir))
@@ -125,18 +121,13 @@ let
     green = "\\\\033[32m";
   };
 
-  # Bundled version of `emacs-overlay`
-  emacs-overlay = import (lock "emacs-overlay") pkgs pkgs;
-
   # Stage 2: install dependencies and byte-compile prepared source
   doomLocal = let
-    # Apply user's emacsPackagesOverlay on top of doomemacsPackages
-    finalPackages = if emacsPackagesOverlay == (final: prev: { })
-                    then doomemacsPackages
-                    else doomemacsPackages.overrideScope' emacsPackagesOverlay;
-
     straight-env = pkgs.callPackage (lock "nix-straight") {
-      emacsPackages = finalPackages;
+      # Apply user's emacsPackagesOverlay on top of doomemacsPackages
+      emacsPackages = if emacsPackagesOverlay == (final: prev: { })
+                      then doomemacsPackages
+                      else doomemacsPackages.overrideScope' emacsPackagesOverlay;
       emacs = emacsPackages.emacsWithPackages extraPackages;
       emacsLoadFiles = [ ./advice.el ];
       emacsArgs = [ "--" "install" "--no-hooks" "--no-fonts" "--no-env" ];
