@@ -1,23 +1,51 @@
-{ lib, newScope, fetchFromGitHub, fetchFromGitLab, fetchFromGitea, fetchgit
-, melpaBuild, elpaBuild, writeText, emacs, trivialBuild
-, lock, ocamlPackages, git
+{
+  lib,
+  newScope,
+  fetchFromGitHub,
+  fetchFromGitLab,
+  fetchFromGitea,
+  fetchgit,
+  melpaBuild,
+  elpaBuild,
+  writeText,
+  emacs,
+  trivialBuild,
+  lock,
+  ocamlPackages,
+  git,
 }:
 
 let
   # Load generated packages
   generatedPkgs = import ./generated.nix {
-    inherit lib newScope fetchFromGitHub fetchFromGitLab fetchFromGitea fetchgit
-            melpaBuild elpaBuild writeText emacs trivialBuild;
+    inherit
+      lib
+      newScope
+      fetchFromGitHub
+      fetchFromGitLab
+      fetchFromGitea
+      fetchgit
+      melpaBuild
+      elpaBuild
+      writeText
+      emacs
+      trivialBuild
+      ;
   };
 
   # Define overrides
   overrides = self: super: {
-    straightBuild = { pname, ... }@args: self.trivialBuild ({
-      ename = pname;
-      version = "1";
-      src = lock pname;
-      buildPhase = ":";
-    } // args);
+    straightBuild =
+      { pname, ... }@args:
+      self.trivialBuild (
+        {
+          ename = pname;
+          version = "1";
+          src = lock pname;
+          buildPhase = ":";
+        }
+        // args
+      );
 
     straight = self.trivialBuild {
       pname = "straight";
@@ -55,156 +83,156 @@ let
       '';
     };
 
-  doom-snippets = self.straightBuild {
-    pname = "doom-snippets";
-    postInstall = ''
-      cp -r *-mode $out/share/emacs/site-lisp
-    '';
-  };
-
-  explain-pause-mode = self.straightBuild {
-    pname = "explain-pause-mode";
-  };
-
-  evil-markdown = self.straightBuild {
-    pname = "evil-markdown";
-  };
-
-  evil-org = self.straightBuild {
-    pname = "evil-org-mode";
-    ename = "evil-org";
-  };
-
-  evil-quick-diff = self.straightBuild {
-    pname = "evil-quick-diff";
-  };
-
-  # use-package needs to be built with melpaBuild instead of elpaBuild
-  use-package = melpaBuild {
-    pname = "use-package";
-    version = "20220625.1237";
-    commit = "0ad5d9d5d8a61517a207ab04bf69e71c081149eb";
-
-    src = fetchFromGitHub {
-      owner = "jwiegley";
-      repo = "use-package";
-      rev = "0ad5d9d5d8a61517a207ab04bf69e71c081149eb";
-      hash = "sha256-nJcSaWcHAanGluVj4rhyHn3jY2i8O8TdpjLHSEgKT4Q=";
+    doom-snippets = self.straightBuild {
+      pname = "doom-snippets";
+      postInstall = ''
+        cp -r *-mode $out/share/emacs/site-lisp
+      '';
     };
 
-    recipe = writeText "recipe" ''
-      (use-package :fetcher github :repo "jwiegley/use-package")
-    '';
+    explain-pause-mode = self.straightBuild {
+      pname = "explain-pause-mode";
+    };
 
-    packageRequires = [ ];
-  };
+    evil-markdown = self.straightBuild {
+      pname = "evil-markdown";
+    };
 
-  # git-commit is provided by magit package (via lisp/git-*.el in :files)
-  # Create an alias so nix-straight can find it
-  git-commit = super.magit;
+    evil-org = self.straightBuild {
+      pname = "evil-org-mode";
+      ename = "evil-org";
+    };
 
-  magit = super.magit.overrideAttrs (esuper: {
-    preBuild = ''
-      make VERSION="${esuper.version}" -C lisp magit-version.el
-    '';
-  });
+    evil-quick-diff = self.straightBuild {
+      pname = "evil-quick-diff";
+    };
 
-  nose = self.straightBuild {
-    pname = "nose";
-  };
+    # use-package needs to be built with melpaBuild instead of elpaBuild
+    use-package = melpaBuild {
+      pname = "use-package";
+      version = "20220625.1237";
+      commit = "0ad5d9d5d8a61517a207ab04bf69e71c081149eb";
 
-  org-contrib = self.straightBuild {
-    pname = "org-contrib";
-    installPhase = ''
-      mkdir -p $out/share/emacs/site-lisp
-       cp -r lisp/* $out/share/emacs/site-lisp
-    '';
-  };
+      src = fetchFromGitHub {
+        owner = "jwiegley";
+        repo = "use-package";
+        rev = "0ad5d9d5d8a61517a207ab04bf69e71c081149eb";
+        hash = "sha256-nJcSaWcHAanGluVj4rhyHn3jY2i8O8TdpjLHSEgKT4Q=";
+      };
 
-  org = self.straightBuild rec {
-    pname = "org";
-    version = "9.4";
-    installPhase = ''
-      LISPDIR=$out/share/emacs/site-lisp
-      install -d $LISPDIR
+      recipe = writeText "recipe" ''
+        (use-package :fetcher github :repo "jwiegley/use-package")
+      '';
 
-      cp -r * $LISPDIR
+      packageRequires = [ ];
+    };
 
-      cat > $LISPDIR/lisp/org-version.el <<EOF
-      (fset 'org-release (lambda () "${version}"))
-      (fset 'org-git-version #'ignore)
-      (provide 'org-version)
-      EOF
-    '';
-  };
+    # git-commit is provided by magit package (via lisp/git-*.el in :files)
+    # Create an alias so nix-straight can find it
+    git-commit = super.magit;
 
-  org-yt = self.straightBuild {
-    pname = "org-yt";
-  };
+    magit = super.magit.overrideAttrs (esuper: {
+      preBuild = ''
+        make VERSION="${esuper.version}" -C lisp magit-version.el
+      '';
+    });
 
-  php-extras = self.straightBuild {
-    pname = "php-extras";
-  };
+    nose = self.straightBuild {
+      pname = "nose";
+    };
 
-  restart-emacs = super.restart-emacs.overrideAttrs (esuper: {
-    patches = [ ../../patches/restart-emacs.patch ];
-  });
+    org-contrib = self.straightBuild {
+      pname = "org-contrib";
+      installPhase = ''
+        mkdir -p $out/share/emacs/site-lisp
+         cp -r lisp/* $out/share/emacs/site-lisp
+      '';
+    };
 
-  revealjs = self.straightBuild {
-    pname = "revealjs";
+    org = self.straightBuild rec {
+      pname = "org";
+      version = "9.4";
+      installPhase = ''
+        LISPDIR=$out/share/emacs/site-lisp
+        install -d $LISPDIR
 
-    installPhase = ''
-      LISPDIR=$out/share/emacs/site-lisp
-      install -d $LISPDIR
+        cp -r * $LISPDIR
 
-      cp -r * $LISPDIR
-    '';
-  };
+        cat > $LISPDIR/lisp/org-version.el <<EOF
+        (fset 'org-release (lambda () "${version}"))
+        (fset 'org-git-version #'ignore)
+        (provide 'org-version)
+        EOF
+      '';
+    };
 
-  rotate-text = self.straightBuild {
-    pname = "rotate-text";
-  };
+    org-yt = self.straightBuild {
+      pname = "org-yt";
+    };
 
-  sln-mode = self.straightBuild {
-    pname = "sln-mode";
-  };
+    php-extras = self.straightBuild {
+      pname = "php-extras";
+    };
 
-  so-long = self.straightBuild {
-    pname = "emacs-so-long";
-    ename = "so-long";
-  };
+    restart-emacs = super.restart-emacs.overrideAttrs (esuper: {
+      patches = [ ../../patches/restart-emacs.patch ];
+    });
 
-  tree-sitter = super.tree-sitter.overrideAttrs (esuper: {
-    postInstall = ''
-      ln -s ${super.tsc}/share/emacs/site-lisp/elpa/${super.tsc.name}/* \
-        $out/share/emacs/site-lisp/elpa/${esuper.pname}-${esuper.version}/
-    '';
-  });
+    revealjs = self.straightBuild {
+      pname = "revealjs";
 
-  ts-fold = self.straightBuild {
-    pname = "ts-fold";
-  };
+      installPhase = ''
+        LISPDIR=$out/share/emacs/site-lisp
+        install -d $LISPDIR
 
-  ob-racket = self.straightBuild {
-    pname = "ob-racket";
-  };
+        cp -r * $LISPDIR
+      '';
+    };
 
-  format-all = self.straightBuild {
-    pname = "format-all";
-  };
+    rotate-text = self.straightBuild {
+      pname = "rotate-text";
+    };
 
-  # dune has a nontrivial derivation, which does not buildable from the melpa
-  # wrapper falling back to the one in nixpkgs
-  dune = ocamlPackages.dune_2.overrideAttrs (old: {
-    # Emacs derivations require an ename attribute
-    ename = old.pname;
+    sln-mode = self.straightBuild {
+      pname = "sln-mode";
+    };
 
-    # Need to adjust paths here match what doom expects
-    postInstall = ''
-      mkdir -p $out/share/emacs/site-lisp/editor-integration
-      ln -snf $out/share/emacs/site-lisp $out/share/emacs/site-lisp/editor-integration/emacs
-    '';
-  });
+    so-long = self.straightBuild {
+      pname = "emacs-so-long";
+      ename = "so-long";
+    };
+
+    tree-sitter = super.tree-sitter.overrideAttrs (esuper: {
+      postInstall = ''
+        ln -s ${super.tsc}/share/emacs/site-lisp/elpa/${super.tsc.name}/* \
+          $out/share/emacs/site-lisp/elpa/${esuper.pname}-${esuper.version}/
+      '';
+    });
+
+    ts-fold = self.straightBuild {
+      pname = "ts-fold";
+    };
+
+    ob-racket = self.straightBuild {
+      pname = "ob-racket";
+    };
+
+    format-all = self.straightBuild {
+      pname = "format-all";
+    };
+
+    # dune has a nontrivial derivation, which does not buildable from the melpa
+    # wrapper falling back to the one in nixpkgs
+    dune = ocamlPackages.dune_2.overrideAttrs (old: {
+      # Emacs derivations require an ename attribute
+      ename = old.pname;
+
+      # Need to adjust paths here match what doom expects
+      postInstall = ''
+        mkdir -p $out/share/emacs/site-lisp/editor-integration
+        ln -snf $out/share/emacs/site-lisp $out/share/emacs/site-lisp/editor-integration/emacs
+      '';
+    });
   };
 in
-  generatedPkgs.overrideScope' overrides
+generatedPkgs.overrideScope' overrides
