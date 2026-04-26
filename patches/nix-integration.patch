@@ -1,100 +1,80 @@
-From d21ea569995c4a082c3abd2657e26cd6a20a7b3c Mon Sep 17 00:00:00 2001
-From: Thiago Kenji Okada <thiagokokada@gmail.com>
-Date: Tue, 16 Aug 2022 17:21:05 +0100
-Subject: [PATCH 1/2] Nix integration
+--- a/early-init.el	2025-12-19 03:12:13.884842489 +0900
++++ b/early-init.el	2025-12-19 03:26:44.436233546 +0900
+@@ -64,39 +64,11 @@
+         ;; `user-emacs-directory' in time.
+         (profile (or (cadr (member "--profile" command-line-args))
+                      (getenv-internal "DOOMPROFILE"))))
+-    (if (null profile)
+-        ;; REVIEW: Backported from Emacs 29. Remove when 28 support is dropped.
+-        (let ((init-dir (or (cadr (member "--init-directory" command-line-args))
+-                            (getenv-internal "EMACSDIR"))))
+-          (if (null init-dir)
+-              ;; FIX: If we've been loaded directly (via 'emacs -batch -l
+-              ;;   early-init.el') or by a doomscript (like bin/doom), and Doom
+-              ;;   is in a non-standard location (and/or Chemacs is used), then
+-              ;;   `user-emacs-directory' will be wrong.
+-              (when noninteractive
+-                (setq user-emacs-directory
+-                      (file-name-directory (file-truename load-file-name))))
+-            ;; FIX: To prevent "invalid option" errors later.
+-            (push (cons "--init-directory" (lambda (_) (pop argv))) command-switch-alist)
+-            (setq user-emacs-directory (expand-file-name init-dir))))
+-      ;; FIX: Discard the switch to prevent "invalid option" errors later.
+-      (push (cons "--profile" (lambda (_) (pop argv))) command-switch-alist)
+-      ;; Running 'doom sync' or 'doom profile sync --all' (re)generates a light
+-      ;; profile loader in $XDG_DATA_HOME/doom/profiles.X.el (or
+-      ;; $DOOMPROFILELOADFILE), after reading `doom-profile-load-path'. This
+-      ;; loader requires `$DOOMPROFILE' be set to function.
+-      (setenv "DOOMPROFILE" profile)
+-      (or (load (let ((windows? (memq system-type '(ms-dos windows-nt cygwin))))
+-                  (expand-file-name
+-                   (format (or (getenv-internal "DOOMPROFILELOADFILE")
+-                               (file-name-concat (if windows? "doomemacs/data" "doom")
+-                                                 "profiles.%d"))
+-                           emacs-major-version)
+-                   (or (if windows? (getenv-internal "LOCALAPPDATA"))
+-                       (getenv-internal "XDG_DATA_HOME")
+-                       "~/.local/share")))
+-                'noerror (not init-file-debug))
+-          (user-error "Profiles not initialized yet; run 'doom sync' first"))))
++    ;; Nix: Override profile to use default "@" profile
++    (setq profile "@")
++    ;; FIX: Discard the switch to prevent "invalid option" errors later.
++    (push (cons "--profile" (lambda (_) (pop argv))) command-switch-alist)
++    (setenv "DOOMPROFILE" profile))
 
----
- early-init.el | 54 +--------------------------------------------------
- lisp/doom.el  |  4 ++--
- 2 files changed, 3 insertions(+), 55 deletions(-)
+   ;; PERF: When `load'ing or `require'ing files, each permutation of
+   ;;   `load-suffixes' and `load-file-rep-suffixes' (then `load-suffixes' +
+@@ -115,6 +85,14 @@
+         (if (file-exists-p (concat doom ".el"))
+-            ;; Load the heart of Doom Emacs.
+-            (load doom nil (not init-file-debug) nil 'must-suffix)
++            (progn
++              ;; Load the heart of Doom Emacs.
++              (load doom nil (not init-file-debug) nil 'must-suffix)
++              ;; Nix: Load profile after doom.el (if DOOMPROFILELOADFILE is set)
++              (let ((profile-loader (getenv-internal "DOOMPROFILELOADFILE")))
++                (when profile-loader
++                  (or (load profile-loader 'noerror (not init-file-debug))
++                      (user-error "Nix: DOOMPROFILELOADFILE is set but file not found: %s"
++                                  profile-loader))))
++              t)  ; Return t to indicate success
+           ;; Failing that, assume we're loading a non-Doom config...
+           ;; HACK: `startup--load-user-init-file' resolves $EMACSDIR from a
+           ;;   lexical (and so, not-trivially-modifiable)
+--- a/lisp/doom.el	2025-12-19 03:12:13.886842534 +0900
++++ b/lisp/doom.el	2025-12-19 03:13:05.850999378 +0900
+@@ -293,12 +293,7 @@
+ `doom-data-dir' and `doom-cache-dir'. Must end with a slash.")
 
-diff --git a/early-init.el b/early-init.el
-index 4335f8db1..78d2817c1 100644
---- a/early-init.el
-+++ b/early-init.el
-@@ -74,59 +74,7 @@
- ;;; Detect `user-emacs-directory'
- 
- ;; Prevent recursive profile processing, in case you're loading a Doom profile.
--(unless (boundp 'doom-version)
--  ;; Not using `command-switch-alist' to process --profile and --init-directory
--  ;; was intentional. `command-switch-alist' is processed too late at startup to
--  ;; change `user-emacs-directory' in time.
--
--  ;; DEPRECATED Backported from 29. Remove this when 27/28 support is removed.
--  (let ((initdir (or (cadr (member "--init-directory" command-line-args))
--                     (getenv-internal "EMACSDIR"))))
--    (when initdir
--      ;; Discard the switch to prevent "invalid option" errors later.
--      (add-to-list 'command-switch-alist (cons "--init-directory" (lambda (_) (pop argv))))
--      (setq user-emacs-directory initdir)))
--
--  (let ((profile (or (cadr (member "--profile" command-line-args))
--                     (getenv-internal "DOOMPROFILE"))))
--    (when profile
--      ;; Discard the switch to prevent "invalid option" errors later.
--      (add-to-list 'command-switch-alist (cons "--profile" (lambda (_) (pop argv))))
--      ;; While processing the requested profile, Doom loosely expects
--      ;; `user-emacs-directory' to be changed. If it doesn't, then you're using
--      ;; profiles.el as a glorified, runtime dir-locals.el (which is fine, if
--      ;; intended).
--      (catch 'found
--        (let ((profiles-file (expand-file-name "profiles.el" user-emacs-directory)))
--          (when (file-exists-p profiles-file)
--            (with-temp-buffer
--              (let ((coding-system-for-read 'utf-8-auto))
--                (insert-file-contents profiles-file))
--              (condition-case-unless-debug e
--                  (let ((profile-data (cdr (assq (intern profile) (read (current-buffer))))))
--                    (dolist (var profile-data (if profile-data (throw 'found t)))
--                      (if (eq (car var) 'env)
--                          (dolist (env (cdr var)) (setenv (car env) (cdr env)))
--                        (set (car var) (cdr var)))))
--                (error (error "Failed to parse profiles.el: %s" (error-message-string e))))))
--          ;; If the requested profile isn't in profiles.el, then see if
--          ;; $EMACSDIR/profiles/$DOOMPROFILE exists. These are implicit
--          ;; profiles, where `emacs --profile foo` will be equivalent to `emacs
--          ;; --init-directory $EMACSDIR/profile/foo', if that directory exists.
--          (let ((profile-dir
--                 (expand-file-name
--                  profile (or (getenv-internal "DOOMPROFILESDIR")
--                              (expand-file-name "profiles/" user-emacs-directory)))))
--            (when (file-directory-p profile-dir)
--              (setq user-emacs-directory profile-dir)
--              (throw 'found t)))
--
--          (user-error "No %S profile found" profile)))
--
--      (when init-file-debug
--        (message "Selected profile: %s" profile))
--      ;; Ensure the selected profile persists through the session
--      (setenv "DOOMPROFILE" profile))))
-+(setq user-emacs-directory (file-name-directory load-file-name))
- 
- 
- ;;
-diff --git a/lisp/doom.el b/lisp/doom.el
-index 6dbbefb5e..0566e6743 100644
---- a/lisp/doom.el
-+++ b/lisp/doom.el
-@@ -232,7 +232,7 @@ These files should not be shared across systems. By default, it is used by
- (defconst doom-data-dir
-   (if doom-profile
-       doom-profile-data-dir
--    (concat doom-local-dir "etc/"))
-+    "~/.local/share/doom/")
-   "Directory for non-volatile local storage.
- 
- Use this for files that don't change much, like server binaries, external
-@@ -241,7 +241,7 @@ dependencies or long-term shared data. Must end with a slash.")
- (defconst doom-cache-dir
-   (if doom-profile
-       doom-profile-cache-dir
--    (concat doom-local-dir "cache/"))
-+    "~/.cache/doom/")
-   "Directory for volatile local storage.
- 
- Use this for files that change often, like cache files. Must end with a slash.")
--- 
-2.37.1
+ (defvar doom-data-dir
+-  (if doom-profile
+-      (if doom--system-windows-p
+-          (expand-file-name "doomemacs/data/" (getenv-internal "LOCALAPPDATA"))
+-        (expand-file-name "doom/" (or (getenv-internal "XDG_DATA_HOME") "~/.local/share")))
+-    ;; DEPRECATED: .local will be removed entirely in 3.0
+-    (file-name-concat doom-local-dir "etc/"))
++  (file-name-concat (or (getenv "DOOMLOCALDIR") doom-local-dir) "etc/")
+   "Where Doom stores its global data files.
 
+ Data files contain shared and long-lived data that Doom, Emacs, and their

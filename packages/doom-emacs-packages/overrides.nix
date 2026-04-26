@@ -17,24 +17,119 @@
 
 let
   # Load generated packages
-  generatedPkgs = import ./generated.nix {
-    inherit
-      lib
-      newScope
-      fetchFromGitHub
-      fetchFromGitLab
-      fetchFromGitea
-      fetchgit
-      melpaBuild
-      elpaBuild
-      writeText
-      emacs
-      trivialBuild
-      ;
-  };
+  generatedPkgs = lib.makeExtensible (
+    self:
+    (import ./generated.nix {
+      inherit
+        lib
+        newScope
+        fetchFromGitHub
+        fetchFromGitLab
+        fetchFromGitea
+        fetchgit
+        melpaBuild
+        elpaBuild
+        writeText
+        emacs
+        trivialBuild
+        ;
+      # Pass emacs.pkgs as emacsPackages for external dependencies
+      emacsPackages = emacs.pkgs;
+    })
+  );
 
   # Define overrides
   overrides = self: super: {
+    evil-easymotion = super.evil-easymotion.overrideAttrs (
+      {
+        packageRequires ? [ ],
+        ...
+      }:
+      {
+        packageRequires = packageRequires ++ [ self.evil ];
+      }
+    );
+
+    evil-markdown = super.evil-markdown.overrideAttrs (
+      {
+        packageRequires ? [ ],
+        ...
+      }:
+      {
+        packageRequires = packageRequires ++ [
+          self.evil
+          self.markdown-mode
+        ];
+      }
+    );
+
+    magit = super.magit.overrideAttrs (
+      {
+        version,
+        packageRequires ? [ ],
+        ...
+      }:
+      {
+        preBuild = ''
+          make VERSION="${version}" -C lisp magit-version.el
+        '';
+
+        packageRequires = packageRequires ++ [
+          self.cond-let
+          emacs.pkgs.llama
+          emacs.pkgs.magit-section
+          self.transient
+          emacs.pkgs.with-editor
+        ];
+      }
+    );
+
+    orgit = super.orgit.overrideAttrs (
+      {
+        packageRequires ? [ ],
+        ...
+      }:
+      {
+        packageRequires = packageRequires ++ [
+          self.cond-let
+          self.magit
+        ];
+      }
+    );
+
+    transient = super.transient.overrideAttrs (
+      {
+        packageRequires ? [ ],
+        ...
+      }:
+      {
+        packageRequires = packageRequires ++ [ self.cond-let ];
+      }
+    );
+
+    # elisp-def = super.elisp-def.overrideAttrs(_: {
+    #   packageRequires = [ emacs.pkgs.dash ];
+    # });
+    # dumb-jump = super.dumb-jump.overrideAttrs (_: {
+    #   packageRequires = [ emacs.pkgs.s emacs.pkgs.dash emacs.pkgs.popup ];
+    # });
+    #
+    # evil-quick-diff = super.evil-quick-diff.overrideAttrs (_: {
+    #   packageRequires = [ self.evil ];
+    # });
+    #
+    # ox-clip = super.ox-clip.overrideAttrs (_: {
+    #   packageRequires = [ emacs.pkgs.htmlize ];
+    # });
+    #
+    # evil-vimish-fold = super.evil-vimish-fold.overrideAttrs (_: {
+    #   packageRequires = [ self.evil ];
+    # });
+    #
+    # evil-org = super.evil-org.overrideAttrs (_: {
+    #   packageRequires = [ self.evil self.org ];
+    # });
+
     straightBuild =
       { pname, ... }@args:
       self.trivialBuild (
@@ -65,49 +160,8 @@ let
       '';
     };
 
-    evil-escape = self.trivialBuild {
-      pname = "evil-escape";
-      ename = "evil-escape";
-      version = super.evil-escape.version;
-      src = super.evil-escape.src;
-      buildPhase = ":";
-    };
-
-    elisp-demos = self.trivialBuild {
-      pname = "elisp-demos";
-      ename = "elisp-demos";
-      version = super.elisp-demos.version;
-      src = super.elisp-demos.src;
-      postInstall = ''
-        cp -r $src/*.org $out/share/emacs/site-lisp/ || true
-      '';
-    };
-
-    doom-snippets = self.straightBuild {
-      pname = "doom-snippets";
-      postInstall = ''
-        cp -r *-mode $out/share/emacs/site-lisp
-      '';
-    };
-
-    explain-pause-mode = self.straightBuild {
-      pname = "explain-pause-mode";
-    };
-
-    evil-markdown = self.straightBuild {
-      pname = "evil-markdown";
-    };
-
-    evil-org = self.straightBuild {
-      pname = "evil-org-mode";
-      ename = "evil-org";
-    };
-
-    evil-quick-diff = self.straightBuild {
-      pname = "evil-quick-diff";
-    };
-
     # use-package needs to be built with melpaBuild instead of elpaBuild
+    # TODO: why needed?
     use-package = melpaBuild {
       pname = "use-package";
       version = "20220625.1237";
@@ -127,15 +181,13 @@ let
       packageRequires = [ ];
     };
 
-    # git-commit is provided by magit package (via lisp/git-*.el in :files)
-    # Create an alias so nix-straight can find it
-    git-commit = super.magit;
-
-    magit = super.magit.overrideAttrs (esuper: {
-      preBuild = ''
-        make VERSION="${esuper.version}" -C lisp magit-version.el
+    doom-snippets = self.straightBuild {
+      pname = "doom-snippets";
+      installPhase = ''
+        mkdir -p $out/share/emacs/site-lisp
+        cp -r $src/* $out/share/emacs/site-lisp/
       '';
-    });
+    };
 
     nose = self.straightBuild {
       pname = "nose";
@@ -189,37 +241,12 @@ let
       '';
     };
 
-    rotate-text = self.straightBuild {
-      pname = "rotate-text";
-    };
-
-    sln-mode = self.straightBuild {
-      pname = "sln-mode";
-    };
-
-    so-long = self.straightBuild {
-      pname = "emacs-so-long";
-      ename = "so-long";
-    };
-
     tree-sitter = super.tree-sitter.overrideAttrs (esuper: {
       postInstall = ''
         ln -s ${super.tsc}/share/emacs/site-lisp/elpa/${super.tsc.name}/* \
           $out/share/emacs/site-lisp/elpa/${esuper.pname}-${esuper.version}/
       '';
     });
-
-    ts-fold = self.straightBuild {
-      pname = "ts-fold";
-    };
-
-    ob-racket = self.straightBuild {
-      pname = "ob-racket";
-    };
-
-    format-all = self.straightBuild {
-      pname = "format-all";
-    };
 
     # dune has a nontrivial derivation, which does not buildable from the melpa
     # wrapper falling back to the one in nixpkgs
@@ -235,4 +262,4 @@ let
     });
   };
 in
-generatedPkgs.overrideScope' overrides
+generatedPkgs.extend overrides

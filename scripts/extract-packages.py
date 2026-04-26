@@ -445,28 +445,42 @@ class ElGetRecipeRepository(RecipeRepository):
 class EmacsmirrorRecipeRepository(RecipeRepository):
     """Emacsmirror recipe repository.
 
-    Recipes are listed in a 'mirror' file (one package name per line).
-    Repository URLs follow the pattern: https://github.com/emacsmirror/{package_name}
+    Recipes are listed in 'mirror' and 'attic' files (one package name per line).
+    - mirror packages: https://github.com/emacsmirror/{package_name}
+    - attic packages: https://github.com/emacsattic/{package_name}
     """
 
     def __init__(self, repo_path: Path, registry_name: str = "emacsmirror") -> None:
         self.repo_path = repo_path
         self.mirror_file = repo_path / "mirror"
+        self.attic_file = repo_path / "attic"
         self.registry_name = registry_name
         self.packages: set[str] = set()
+        self.attic_packages: set[str] = set()
 
     def load(self) -> None:
-        """Load package names from mirror file."""
+        """Load package names from mirror and attic files."""
+        # Load mirror file
         if not self.mirror_file.exists():
             print(f"Warning: {self.mirror_file} not found")
-            return
+        else:
+            try:
+                content = self.mirror_file.read_text(encoding="utf-8")
+                self.packages = set(line.strip() for line in content.splitlines() if line.strip())
+                print(f"Loaded {len(self.packages)} packages from {self.registry_name} mirror")
+            except Exception as e:
+                print(f"Warning: Failed to load emacsmirror mirror packages: {e}")
 
-        try:
-            content = self.mirror_file.read_text(encoding="utf-8")
-            self.packages = set(line.strip() for line in content.splitlines() if line.strip())
-            print(f"Loaded {len(self.packages)} packages from {self.registry_name}")
-        except Exception as e:
-            print(f"Warning: Failed to load emacsmirror packages: {e}")
+        # Load attic file
+        if not self.attic_file.exists():
+            print(f"Warning: {self.attic_file} not found")
+        else:
+            try:
+                content = self.attic_file.read_text(encoding="utf-8")
+                self.attic_packages = set(line.strip() for line in content.splitlines() if line.strip())
+                print(f"Loaded {len(self.attic_packages)} packages from {self.registry_name} attic")
+            except Exception as e:
+                print(f"Warning: Failed to load emacsmirror attic packages: {e}")
 
     @classmethod
     def initialize_into(cls, registry: "RecipeRegistry") -> None:
@@ -484,12 +498,164 @@ class EmacsmirrorRecipeRepository(RecipeRepository):
 
     def find_recipe(self, package_name: str) -> RecipeInfo | None:
         """Find emacsmirror recipe by package name."""
-        if package_name not in self.packages:
+        # Check attic first
+        if package_name in self.attic_packages:
+            repo_url = f"https://github.com/emacsattic/{package_name}"
+            return RecipeInfo(
+                name=package_name,
+                repo_url=repo_url,
+                branch=None,
+                files=None,
+                registry=self.registry_name,
+            )
+
+        # Then check regular mirror
+        if package_name in self.packages:
+            repo_url = f"https://github.com/emacsmirror/{package_name}"
+            return RecipeInfo(
+                name=package_name,
+                repo_url=repo_url,
+                branch=None,
+                files=None,
+                registry=self.registry_name,
+            )
+
+        return None
+
+
+class NonGnuElpaRecipeRepository(RecipeRepository):
+    """NonGNU ELPA recipe repository.
+
+    Reads elpa-packages file from nongnu_elpa repository to get package URLs.
+    """
+
+    def __init__(self, repo_path: Path) -> None:
+        self.repo_path = repo_path
+        self.elpa_packages_file = repo_path / "elpa-packages"
+        self.registry_name = "nongnu-elpa"
+        self.cache: dict[str, RecipeInfo] = {}
+
+    def load(self) -> None:
+        """Load and parse elpa-packages file."""
+        try:
+            if not self.elpa_packages_file.exists():
+                print(f"Warning: {self.elpa_packages_file} not found")
+                return
+
+            print(f"Loading {self.registry_name} from elpa-packages...")
+            content = self.elpa_packages_file.read_text(encoding="utf-8")
+
+            # Parse elpa-packages as S-expression
+            lexer = Lexer(content)
+            tokens = lexer.tokenize()
+            parser = Parser(tokens)
+            sexp = parser.parse_value()
+
+            if not isinstance(sexp, SExp):
+                print(f"Warning: Invalid elpa-packages format for {self.registry_name}")
+                return
+
+            # Parse each package entry: (package-name :url "..." :ignored-files ...)
+            for pkg_entry in sexp.elements:
+                if not isinstance(pkg_entry, SExp) or len(pkg_entry.elements) < 2:
+                    continue
+
+                package_name = pkg_entry.elements[0]
+                if not isinstance(package_name, str):
+                    continue
+
+                # Extract plist properties starting from index 1
+                plist = pkg_entry.elements[1:]
+                repo_url = None
+                lisp_dir = None
+                ignored_files = None
+
+                i = 0
+                while i < len(plist):
+                    if isinstance(plist[i], str) and plist[i].startswith(":"):
+                        key = plist[i][1:]  # Remove leading ":"
+                        if i + 1 < len(plist):
+                            value = plist[i + 1]
+                            if key == "url" and isinstance(value, str):
+                                repo_url = value
+                            elif key == "lisp-dir" and isinstance(value, str):
+                                lisp_dir = value
+                            elif key == "ignored-files":
+                                ignored_files = value
+                        i += 2
+                    else:
+                        i += 1
+
+                # Build files specification
+                files = None
+                if lisp_dir:
+                    # Include files from lisp-dir subdirectory
+                    files = [":defaults", f"{lisp_dir}/*.el"]
+                    # Also add ignored-files as exclusions if present
+                    if ignored_files:
+                        files.append([":exclude", sexp_to_json_value(ignored_files)])
+                elif ignored_files:
+                    # If only ignored-files without lisp-dir, convert to exclude pattern
+                    files = [":defaults", [":exclude", sexp_to_json_value(ignored_files)]]
+
+                if repo_url:
+                    self.cache[package_name] = RecipeInfo(
+                        name=package_name,
+                        repo_url=repo_url,
+                        branch=None,
+                        files=files,
+                        registry=self.registry_name,
+                    )
+
+            print(f"Loaded {len(self.cache)} packages from {self.registry_name}")
+
+        except Exception as e:
+            print(f"Warning: Failed to load elpa-packages for {self.registry_name}: {e}")
+
+    def find_recipe(self, package_name: str) -> RecipeInfo | None:
+        """Find recipe from cached elpa-packages."""
+        return self.cache.get(package_name)
+
+    @classmethod
+    def initialize_into(cls, registry: "RecipeRegistry") -> None:
+        """Initialize NonGNU ELPA repository and add to registry."""
+        try:
+            repo_path = registry.clone_repo(
+                "nongnu-elpa",
+                "https://github.com/emacsmirror/nongnu_elpa.git"
+            )
+            repo = cls(repo_path)
+            repo.load()
+            registry.repositories.append(repo)
+        except Exception as e:
+            print(f"Warning: Could not initialize NonGNU ELPA: {e}")
+
+
+class GnuElpaRecipeRepository(RecipeRepository):
+    """GNU ELPA recipe repository.
+
+    Checks for marker files in gnu-elpa-mirror repository. If a marker file
+    exists for a package, uses emacs-straight/{package-name} mirror.
+    """
+
+    def __init__(self, repo_path: Path) -> None:
+        self.repo_path = repo_path
+        self.registry_name = "gnu-elpa-mirror"
+
+    def load(self) -> None:
+        """No pre-loading needed for marker file checking."""
+        pass
+
+    def find_recipe(self, package_name: str) -> RecipeInfo | None:
+        """Find recipe by checking if marker file exists."""
+        marker_file = self.repo_path / package_name
+
+        # Check if marker file exists and is not a directory
+        if not marker_file.exists() or marker_file.is_dir():
             return None
 
-        # Emacsmirror packages are hosted at github.com/emacsmirror/{package_name}
-        repo_url = f"https://github.com/emacsmirror/{package_name}"
-
+        # Use emacs-straight mirror for packages with marker files
+        repo_url = f"https://github.com/emacs-straight/{package_name}"
         return RecipeInfo(
             name=package_name,
             repo_url=repo_url,
@@ -498,111 +664,15 @@ class EmacsmirrorRecipeRepository(RecipeRepository):
             registry=self.registry_name,
         )
 
-
-class ArchiveContentsRecipeRepository(RecipeRepository):
-    """Recipe repository that uses archive-contents format.
-
-    Used by GNU ELPA and NonGNU ELPA. The archive-contents file contains
-    all package metadata including repository URLs.
-    """
-
-    def __init__(self, archive_contents_url: str, registry_name: str) -> None:
-        self.archive_contents_url = archive_contents_url
-        self.registry_name = registry_name
-        self.cache: dict[str, RecipeInfo] = {}
-
-    def load(self) -> None:
-        """Load and parse archive-contents file."""
-        try:
-            print(f"Downloading {self.registry_name} archive-contents...")
-            with urlopen(self.archive_contents_url, timeout=30) as response:
-                content = response.read().decode("utf-8")
-
-            # Parse the archive-contents as S-expression
-            lexer = Lexer(content)
-            tokens = lexer.tokenize()
-            parser = Parser(tokens)
-            sexp = parser.parse_value()
-
-            if not isinstance(sexp, SExp) or len(sexp.elements) < 2:
-                print(f"Warning: Invalid archive-contents format for {self.registry_name}")
-                return
-
-            # Skip version number (first element) and process packages
-            for pkg_entry in sexp.elements[1:]:
-                if not isinstance(pkg_entry, SExp) or len(pkg_entry.elements) < 2:
-                    continue
-
-                package_name = pkg_entry.elements[0]
-                if not isinstance(package_name, str):
-                    continue
-
-                # Due to lexer parsing, dot notation becomes flat:
-                # [name, ".", "[", version, deps, desc, type, plist, ...]
-                # The plist is at index 7 (if it exists)
-                if len(pkg_entry.elements) < 8:
-                    continue
-
-                props = pkg_entry.elements[7]
-                if not isinstance(props, SExp):
-                    continue
-
-                # Extract :url and :commit from property list
-                # Each element in props is a cons cell like (:url . "value")
-                # which is parsed as [":url", ".", "value"]
-                repo_url = None
-                commit = None
-                for prop in props.elements:
-                    if isinstance(prop, SExp) and len(prop.elements) >= 3:
-                        # Check if this is a cons cell with keyword at index 0
-                        key = prop.elements[0]
-                        if isinstance(key, str) and key.startswith(":"):
-                            # Value is at index 2 (after ".")
-                            value = prop.elements[2] if len(prop.elements) > 2 else None
-                            if key == ":url" and isinstance(value, str):
-                                repo_url = value
-                            elif key == ":commit" and isinstance(value, str):
-                                commit = value
-
-                if repo_url:
-                    self.cache[package_name] = RecipeInfo(
-                        name=package_name,
-                        repo_url=repo_url,
-                        branch=commit,  # Store commit in branch field temporarily
-                        files=None,
-                        registry=self.registry_name,
-                    )
-
-            print(f"Loaded {len(self.cache)} packages from {self.registry_name}")
-
-        except Exception as e:
-            print(f"Warning: Failed to load archive-contents for {self.registry_name}: {e}")
-
-    def find_recipe(self, package_name: str) -> RecipeInfo | None:
-        """Find recipe from cached archive-contents."""
-        return self.cache.get(package_name)
-
     @classmethod
-    def initialize_nongnu_into(cls, registry: "RecipeRegistry") -> None:
-        """Initialize NonGNU ELPA repository and add to registry."""
-        try:
-            repo = cls(
-                "https://elpa.nongnu.org/nongnu/archive-contents",
-                "nongnu-elpa"
-            )
-            repo.load()
-            registry.repositories.append(repo)
-        except Exception as e:
-            print(f"Warning: Could not initialize NonGNU ELPA: {e}")
-
-    @classmethod
-    def initialize_gnu_into(cls, registry: "RecipeRegistry") -> None:
+    def initialize_into(cls, registry: "RecipeRegistry") -> None:
         """Initialize GNU ELPA repository and add to registry."""
         try:
-            repo = cls(
-                "https://elpa.gnu.org/packages/archive-contents",
-                "gnu-elpa-mirror"
+            repo_path = registry.clone_repo(
+                "gnu-elpa-mirror",
+                "https://github.com/emacs-straight/gnu-elpa-mirror"
             )
+            repo = cls(repo_path)
             repo.load()
             registry.repositories.append(repo)
         except Exception as e:
@@ -649,11 +719,11 @@ class RecipeRegistry:
         # MELPA
         MelpaRecipeRepository.initialize_into(self)
 
-        # NonGNU ELPA (archive-contents)
-        ArchiveContentsRecipeRepository.initialize_nongnu_into(self)
+        # NonGNU ELPA
+        NonGnuElpaRecipeRepository.initialize_into(self)
 
-        # GNU ELPA (archive-contents)
-        ArchiveContentsRecipeRepository.initialize_gnu_into(self)
+        # GNU ELPA
+        GnuElpaRecipeRepository.initialize_into(self)
 
         # el-get
         ElGetRecipeRepository.initialize_into(self)
