@@ -1,5 +1,19 @@
---- a/early-init.el	2025-12-19 03:12:13.884842489 +0900
-+++ b/early-init.el	2025-12-19 03:26:44.436233546 +0900
+nix-doom-emacs: Doom 3.0 Nix integration
+========================================
+
+Originally based on the Doom 2.x integration patch by Thiago Kenji Okada
+(2022, "Nix integration"). Rewritten for Doom 3.0's profile system:
+
+  * Skip upstream's profile-loader autodetection and force profile "@"
+    (DOOMPROFILE), since the Nix store has no writable XDG_DATA_HOME.
+  * Defer loading $DOOMPROFILELOADFILE until *after* lisp/doom.el has been
+    required, so init.MAJOR.MINOR.el's `(equal doom-version ...)' check
+    sees a bound symbol instead of erroring out.
+  * Point `doom-data-dir' at $DOOMLOCALDIR/etc/ so the read-only Nix store
+    profile dir is found at runtime.
+
+--- a/early-init.el
++++ b/early-init.el
 @@ -64,39 +64,11 @@
          ;; `user-emacs-directory' in time.
          (profile (or (cadr (member "--profile" command-line-args))
@@ -62,8 +76,8 @@
            ;; Failing that, assume we're loading a non-Doom config...
            ;; HACK: `startup--load-user-init-file' resolves $EMACSDIR from a
            ;;   lexical (and so, not-trivially-modifiable)
---- a/lisp/doom.el	2025-12-19 03:12:13.886842534 +0900
-+++ b/lisp/doom.el	2025-12-19 03:13:05.850999378 +0900
+--- a/lisp/doom.el
++++ b/lisp/doom.el
 @@ -293,12 +293,7 @@
  `doom-data-dir' and `doom-cache-dir'. Must end with a slash.")
 

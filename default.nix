@@ -217,17 +217,23 @@ let
     EOF
   '';
 
-  # Stage 4.5: straight-emacs-env (copy from doomLocal which already has profiles)
-  # Note: doomLocal runs 'doom install' via nix-straight, which writes the
-  # profile init files to $DOOMLOCALDIR/etc/@/init.MAJOR.MINOR.el (no DOOMPROFILE
-  # set during the build). Doom 3.0 itself looks them up via
+  # Stage 4.5: straight-emacs-env (DOOMLOCALDIR for the runtime).
+  # doomLocal runs 'doom install' via nix-straight, which writes the profile
+  # init files to $DOOMLOCALDIR/etc/@/init.MAJOR.MINOR.el (no DOOMPROFILE set
+  # during the build). Doom 3.0 itself looks them up via
   # `doom-profile-init-file', which expects etc/{name}/@/{ref}/init.MAJOR.MINOR.el.
-  # Move them into the layout Doom expects, using globs so the Emacs version
-  # comes from doomLocal rather than being hard-coded here.
-  straight-emacs-env = runCommand "straight-emacs-env" {} ''
+  # Symlink the bulky package output and only copy etc/ so we can restructure
+  # the profile dir without duplicating doomLocal's whole tree.
+  straight-emacs-env = runCommand "straight-emacs-env" { } ''
     mkdir -p "$out"
-    cp -r ${doomLocal}/* "$out/"
-    chmod -R u+w "$out"
+    for entry in ${doomLocal}/*; do
+      name="$(basename "$entry")"
+      if [[ "$name" == etc ]]; then continue; fi
+      ln -s "$entry" "$out/$name"
+    done
+
+    cp -r ${doomLocal}/etc "$out/etc"
+    chmod -R u+w "$out/etc"
 
     shopt -s nullglob
     init_files=("$out/etc/@/"init.*.el)
@@ -244,80 +250,11 @@ let
     done
   '';
 
-  # Stage 5: Profile loader that loads the generated init file
-  profile-loader = writeTextDir "share/doom/profiles.30.el" ''
-    ;; -*- lexical-binding: t; -*-
-    ;; Nix-generated Doom Emacs profile loader
-    ;; This file is loaded by early-init.el when DOOMPROFILE is set
-
-    (pcase (intern (getenv-internal "DOOMPROFILE"))
-      ('@ ;; Default profile (@ is the default profile name in Doom 3.0)
-       ;; Resolve the init file via Doom's own helper so the path tracks the
-       ;; running Emacs version (init.MAJOR.MINOR.el) instead of being pinned.
-       (load (doom-profile-init-file doom-profile) nil t)
-
-       ;; Workaround: doom sync (run during nix build via nix-straight) emits
-       ;; init.30.2.el with every user module's :index set to the final
-       ;; hash-table-count, instead of incrementing. Because :depth defaults to
-       ;; (0 . 0), the tie-break on :index fails and `doom--startup-modules'
-       ;; ends up loading modules in hash-table-keys order - which puts
-       ;; `:config default' before `:editor evil', triggering
-       ;; (void-variable evil-window-map) on startup.
-       ;;
-       ;; Recompute the load order ourselves and rebuild
-       ;; `doom--startup-modules' to load `:config' modules last.
-       (let* ((all-keys (cl-loop for k being the hash-keys of doom-modules collect k))
-              (user-keys
-               (cl-remove-if (lambda (k)
-                               (or (equal k '(:doom))
-                                   (equal k '(:user))
-                                   (equal k '(:config . use-package))))
-                             all-keys))
-              (sorted-keys
-               (sort (copy-sequence user-keys)
-                     (lambda (a b)
-                       (and (not (eq (car a) :config))
-                            (eq (car b) :config)))))
-              (load-form
-               (lambda (key file)
-                 (when-let* ((path (doom-module-get key :path))
-                             (full (concat (file-name-as-directory path) file))
-                             ((file-exists-p (concat full ".el"))))
-                   `(with-doom-module ',key (doom-load ,full t)))))
-              (init-forms
-               (delq nil (mapcar (lambda (k) (funcall load-form k "init"))
-                                 sorted-keys)))
-              (config-forms
-               (delq nil (mapcar (lambda (k) (funcall load-form k "config"))
-                                 sorted-keys))))
-         (eval
-          `(defun doom--startup-modules ()
-             (with-doom-context 'module
-               (let ((old-custom-file custom-file))
-                 (with-doom-context 'init
-                   (with-doom-module '(:config . use-package)
-                     (doom-load
-                      ,(file-name-concat
-                        (doom-module-get '(:config . use-package) :path)
-                        "init")
-                      t))
-                   (with-doom-module '(:doom)
-                     (doom-load (file-name-concat doom-core-dir "init") t))
-                   (doom-run-hooks 'doom-before-modules-init-hook)
-                   ,@init-forms
-                   (doom-run-hooks 'doom-after-modules-init-hook))
-                 (with-doom-context 'config
-                   (doom-run-hooks 'doom-before-modules-config-hook)
-                   ,@config-forms
-                   (doom-run-hooks 'doom-after-modules-config-hook)
-                   (with-doom-module '(:user)
-                     (doom-load (file-name-concat doom-user-dir "config") t)))
-                 (when (eq custom-file old-custom-file)
-                   (doom-load custom-file 'noerror)))))
-          t))))
-
-    ;; Ensure user-emacs-directory ends with a directory separator
-    (setq user-emacs-directory (file-name-as-directory user-emacs-directory))
+  # Stage 5: Profile loader that loads the generated init file.
+  # Body lives in profile-loader.el so the elisp is editable as Lisp rather
+  # than as a Nix string, and so it can reuse Doom's own helpers.
+  profile-loader = runCommand "profiles.30.el" { } ''
+    install -Dm644 ${./profile-loader.el} "$out/share/doom/profiles.30.el"
   '';
 
   # Stage 6: catch-all wrapper capable to run doom-emacs even
@@ -338,15 +275,13 @@ let
     '';
   in (emacsPackages.emacsWithPackages (epkgs: [ load-config-from-site ]));
 
-  # create a `emacs.d` dir to be loaded using `--init-directory` flag from Emacs 29+
-  # this will allow proper usage of `early-init.el`, fixing FOUC issues and improving
-  # startup performance  # Since Emacs 29+ overwrites user-emacs-directory after loading early-init.el,
-  # we create a directory structure that mimics Doom's layout with symlinks
+  # create a `emacs.d` dir to be loaded using `--init-directory` flag from Emacs 29+.
+  # This allows proper usage of `early-init.el`, fixing FOUC issues and improving
+  # startup performance. Emacs 29+ overwrites user-emacs-directory after loading
+  # early-init.el, so we mirror Doom's layout via symlinks.
   emacs-dir = runCommand "emacs-dir" { } ''
     mkdir -p $out
-    # Symlink Doom's files so Emacs can find them
     ln -s ${doom-emacs}/early-init.el $out/early-init.el
-    ln -s ${doom-emacs}/init.el $out/init.el
     ln -s ${doom-emacs}/lisp $out/lisp
     ln -s ${doom-emacs}/modules $out/modules
     ln -s ${doom-emacs}/bin $out/bin
