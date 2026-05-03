@@ -16,7 +16,6 @@
 }:
 
 let
-  # Load generated packages
   generatedPkgs = lib.makeExtensible (
     self:
     (import ./generated.nix {
@@ -33,12 +32,10 @@ let
         emacs
         trivialBuild
         ;
-      # Pass emacs.pkgs as emacsPackages for external dependencies
       emacsPackages = emacs.pkgs;
     })
   );
 
-  # Define overrides
   overrides = self: super: {
     evil-easymotion = super.evil-easymotion.overrideAttrs (
       {
@@ -63,72 +60,11 @@ let
       }
     );
 
-    magit = super.magit.overrideAttrs (
-      {
-        version,
-        packageRequires ? [ ],
-        ...
-      }:
-      {
-        preBuild = ''
-          make VERSION="${version}" -C lisp magit-version.el
-        '';
-
-        packageRequires = packageRequires ++ [
-          self.cond-let
-          emacs.pkgs.llama
-          emacs.pkgs.magit-section
-          self.transient
-          emacs.pkgs.with-editor
-        ];
-      }
-    );
-
-    orgit = super.orgit.overrideAttrs (
-      {
-        packageRequires ? [ ],
-        ...
-      }:
-      {
-        packageRequires = packageRequires ++ [
-          self.cond-let
-          self.magit
-        ];
-      }
-    );
-
-    transient = super.transient.overrideAttrs (
-      {
-        packageRequires ? [ ],
-        ...
-      }:
-      {
-        packageRequires = packageRequires ++ [ self.cond-let ];
-      }
-    );
-
-    # elisp-def = super.elisp-def.overrideAttrs(_: {
-    #   packageRequires = [ emacs.pkgs.dash ];
-    # });
-    # dumb-jump = super.dumb-jump.overrideAttrs (_: {
-    #   packageRequires = [ emacs.pkgs.s emacs.pkgs.dash emacs.pkgs.popup ];
-    # });
-    #
-    # evil-quick-diff = super.evil-quick-diff.overrideAttrs (_: {
-    #   packageRequires = [ self.evil ];
-    # });
-    #
-    # ox-clip = super.ox-clip.overrideAttrs (_: {
-    #   packageRequires = [ emacs.pkgs.htmlize ];
-    # });
-    #
-    # evil-vimish-fold = super.evil-vimish-fold.overrideAttrs (_: {
-    #   packageRequires = [ self.evil ];
-    # });
-    #
-    # evil-org = super.evil-org.overrideAttrs (_: {
-    #   packageRequires = [ self.evil self.org ];
-    # });
+    magit = super.magit.overrideAttrs ({ version, ... }: {
+      preBuild = ''
+        make VERSION="${version}" -C lisp magit-version.el
+      '';
+    });
 
     straightBuild =
       { pname, ... }@args:
@@ -150,18 +86,6 @@ let
       nativeBuildInputs = [ git ];
     };
 
-    all-the-icons = self.trivialBuild {
-      pname = "all-the-icons";
-      ename = "all-the-icons";
-      version = super.all-the-icons.version;
-      src = super.all-the-icons.src;
-      postInstall = ''
-        cp -r $src/data $out/share/emacs/site-lisp/
-      '';
-    };
-
-    # use-package needs to be built with melpaBuild instead of elpaBuild
-    # TODO: why needed?
     use-package = melpaBuild {
       pname = "use-package";
       version = "20220625.1237";
@@ -218,14 +142,6 @@ let
       '';
     };
 
-    org-yt = self.straightBuild {
-      pname = "org-yt";
-    };
-
-    php-extras = self.straightBuild {
-      pname = "php-extras";
-    };
-
     restart-emacs = super.restart-emacs.overrideAttrs (esuper: {
       patches = [ ../../patches/restart-emacs.patch ];
     });
@@ -240,13 +156,6 @@ let
         cp -r * $LISPDIR
       '';
     };
-
-    tree-sitter = super.tree-sitter.overrideAttrs (esuper: {
-      postInstall = ''
-        ln -s ${super.tsc}/share/emacs/site-lisp/elpa/${super.tsc.name}/* \
-          $out/share/emacs/site-lisp/elpa/${esuper.pname}-${esuper.version}/
-      '';
-    });
 
     # dune has a nontrivial derivation, which does not buildable from the melpa
     # wrapper falling back to the one in nixpkgs

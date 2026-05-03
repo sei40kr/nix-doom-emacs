@@ -217,13 +217,10 @@ let
     EOF
   '';
 
-  # Stage 4.5: straight-emacs-env (DOOMLOCALDIR for the runtime).
-  # doomLocal runs 'doom install' via nix-straight, which writes the profile
-  # init files to $DOOMLOCALDIR/etc/@/init.MAJOR.MINOR.el (no DOOMPROFILE set
-  # during the build). Doom 3.0 itself looks them up via
-  # `doom-profile-init-file', which expects etc/{name}/@/{ref}/init.MAJOR.MINOR.el.
-  # Symlink the bulky package output and only copy etc/ so we can restructure
-  # the profile dir without duplicating doomLocal's whole tree.
+  # Stage 4.5: relocate doomLocal's profile init files into the nested layout
+  # `doom-profile-init-file' expects (etc/{name}/@/{ref}/init.MAJOR.MINOR.el).
+  # doomLocal builds without DOOMPROFILE, so doom install drops them flat
+  # under etc/@/. Symlink the rest of doomLocal so we don't duplicate its tree.
   straight-emacs-env = runCommand "straight-emacs-env" { } ''
     mkdir -p "$out"
     for entry in ${doomLocal}/*; do
@@ -250,9 +247,7 @@ let
     done
   '';
 
-  # Stage 5: Profile loader that loads the generated init file.
-  # Body lives in profile-loader.el so the elisp is editable as Lisp rather
-  # than as a Nix string, and so it can reuse Doom's own helpers.
+  # Stage 5: profile loader (replaces upstream's `doom sync'-generated one).
   profile-loader = runCommand "profiles.30.el" { } ''
     install -Dm644 ${./profile-loader.el} "$out/share/doom/profiles.30.el"
   '';
@@ -262,11 +257,9 @@ let
   emacs = let
     load-config-from-site = writeTextDir "share/emacs/site-lisp/default.el" ''
       (message "doom-emacs is not placed in `doom-private-dir', loading from `site-lisp'")
-      ;; Set user-emacs-directory to doom-emacs location before loading
       (setq user-emacs-directory
             (file-name-as-directory
-             (or (getenv "__DEBUG_doom_emacs_DIR")
-                 "${doom-emacs}")))
+             (or (getenv "__DEBUG_doom_emacs_DIR") "${doom-emacs}")))
       ${# TODO: remove once Emacs 29+ is released and commonly available
         lib.optionalString (!isEmacs29) ''
         (load "${doom-emacs}/early-init.el")
@@ -275,10 +268,10 @@ let
     '';
   in (emacsPackages.emacsWithPackages (epkgs: [ load-config-from-site ]));
 
-  # create a `emacs.d` dir to be loaded using `--init-directory` flag from Emacs 29+.
-  # This allows proper usage of `early-init.el`, fixing FOUC issues and improving
-  # startup performance. Emacs 29+ overwrites user-emacs-directory after loading
-  # early-init.el, so we mirror Doom's layout via symlinks.
+  # create a `emacs.d` dir to be loaded using `--init-directory` flag from Emacs 29+
+  # this will allow proper usage of `early-init.el`, fixing FOUC issues and improving
+  # startup performance. Mirror doom-emacs's layout so its early-init.el resolves
+  # `lisp/doom.el' relative to user-emacs-directory.
   emacs-dir = runCommand "emacs-dir" { } ''
     mkdir -p $out
     ln -s ${doom-emacs}/early-init.el $out/early-init.el

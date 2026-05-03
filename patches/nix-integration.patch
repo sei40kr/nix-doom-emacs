@@ -1,16 +1,8 @@
-nix-doom-emacs: Doom 3.0 Nix integration
-========================================
-
-Originally based on the Doom 2.x integration patch by Thiago Kenji Okada
-(2022, "Nix integration"). Rewritten for Doom 3.0's profile system:
-
-  * Skip upstream's profile-loader autodetection and force profile "@"
-    (DOOMPROFILE), since the Nix store has no writable XDG_DATA_HOME.
-  * Defer loading $DOOMPROFILELOADFILE until *after* lisp/doom.el has been
-    required, so init.MAJOR.MINOR.el's `(equal doom-version ...)' check
-    sees a bound symbol instead of erroring out.
-  * Point `doom-data-dir' at $DOOMLOCALDIR/etc/ so the read-only Nix store
-    profile dir is found at runtime.
+Doom 3.0 Nix integration:
+  * force profile "@" (no writable XDG_DATA_HOME in the Nix store)
+  * load $DOOMPROFILELOADFILE only after lisp/doom.el so init.MAJOR.MINOR.el's
+    `doom-version' check sees a bound symbol
+  * point `doom-data-dir' at $DOOMLOCALDIR/etc/
 
 --- a/early-init.el
 +++ b/early-init.el
